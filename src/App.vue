@@ -268,6 +268,16 @@ export default {
     //HelloWorld,
   },
 
+  created(){
+    if (!this.$cookies.isKey("darkTheme")){
+      console.log('No cookie');
+      this.$cookies.set("darkTheme", false);
+    }
+
+    let darkTheme = this.$cookies.get('darkTheme');
+    this.$vuetify.theme.dark = darkTheme == "true"; //darkTheme will be a string
+  },
+
   data: () => ({
     registerDialog: false,
     title: "Forks, Corks, & Kegs",
@@ -365,6 +375,7 @@ export default {
     },
     toggleTheme() {
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+      this.$cookies.set("darkTheme", this.$vuetify.theme.dark);
     }
   }
 };

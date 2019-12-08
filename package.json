@@ -11,6 +11,7 @@
     "core-js": "^3.4.3",
     "lorem-ipsum": "^2.0.3",
     "vue": "^2.6.10",
+    "vue-cookies": "^1.5.13",
     "vuetify": "^2.1.0"
   },
   "devDependencies": {
@@ -35,7 +36,9 @@
       "plugin:vue/essential",
       "eslint:recommended"
     ],
-    "rules": {},
+    "rules": {
+      "no-console": 0
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }
