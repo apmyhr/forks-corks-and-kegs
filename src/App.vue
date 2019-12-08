@@ -118,15 +118,9 @@
       <section>
         <v-parallax src="@/assets/beer.jpg" height="380">
           <v-layout column align-center justify-center>
-            <div class="headline white--text mb-4 text-center">Web development has never been easier</div>
-            <em>Kick-start your application today</em>
-            <v-btn
-              class="mt-12"
-              color="blue lighten-2"
-              dark
-              large
-              href="/pre-made-themes"
-            >Get Started</v-btn>
+            <div class="headline white--text mb-4 text-center">Put a summary tag line here</div>
+            <em>Register today!</em>
+            <v-btn class="mt-12" color="blue lighten-2" dark large @click="registerDialog = true">Register</v-btn>
           </v-layout>
         </v-parallax>
       </section>
@@ -174,7 +168,7 @@
                       <v-icon class="blue--text text--lighten-2">mdi-email</v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
-                      <v-list-item-title>john@vuetifyjs.com</v-list-item-title>
+                      <v-list-item-title>Somebody@somewhere.com</v-list-item-title>
                     </v-list-item-content>
                   </v-list-item>
                 </v-list>
