@@ -269,6 +269,7 @@ export default {
     }
 
     let darkTheme = this.$cookies.get('darkTheme');
+    console.log('darkTheme: ' + darkTheme);
     this.$vuetify.theme.dark = darkTheme == "true"; //darkTheme will be a string
   },
 
