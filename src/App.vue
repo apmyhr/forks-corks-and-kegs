@@ -100,7 +100,7 @@
               @click="showPhoto(photo)"
             >
               <v-card flat tile class="d-flex" color="transparent">
-                <v-img :src="photo" aspect-ratio="1" contain style="background-color: transparent">
+                <v-img :src="photo" aspect-ratio="1" :contain="overrideContain(photo)">
                   <template v-slot:placeholder>
                     <v-row class="fill-height ma-0" align="center" justify="center">
                       <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
@@ -156,9 +156,7 @@
                   <div class="headline">Company info</div>
                 </v-card-title>
                 <v-card-text>
-                  Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
-                  Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                  Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.
+                  Company info coming soon...
                 </v-card-text>
               </v-card>
             </v-flex>
@@ -167,7 +165,7 @@
                 <v-card-title primary-title class="layout justify-center">
                   <div class="headline">Contact us</div>
                 </v-card-title>
-                <v-card-text>Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.</v-card-text>
+                <v-card-text>Please feel free to contact us through either of the following methods.</v-card-text>
                 <v-list class="transparent">
                   <v-list-item>
                     <v-list-item-action>
@@ -468,6 +466,10 @@ export default {
       "Please write your question here.  We will get back with you shortly.  Thanks you!"
   }),
   methods: {
+    overrideContain(photo){
+      //Need to use Contain on this one photo because it shows "UCKED"
+      return photo.indexOf('Tucked Away Logo') != -1;
+    },
     showPhoto(photo) {
       this.imageFullScreen = true;
       this.$nextTick(() => {
