@@ -58,6 +58,13 @@
               large
               @click="registerDialog = true"
             >Register</v-btn>
+            <v-btn
+              class="mt-12"
+              color="green lighten-2"
+              dark
+              large
+              @click="openFlyer"
+            >View the Flyer</v-btn>
           </v-layout>
         </v-parallax>
       </section>
@@ -237,6 +244,10 @@
         </div>
       </v-card>
     </v-dialog>
+
+    <v-dialog v-model="viewFlyerDialog">
+      <embed src="20-House-ForksCorksKegs-Flyer.pdf" style="width: calc(100%); height: calc(100vh - 150px)" />
+    </v-dialog>
   </v-app>
 </template>
 
@@ -275,6 +286,7 @@ export default {
   },
 
   data: () => ({
+    viewFlyerDialog: false,
     imageFullScreen: false,
     imageFullScreenPath: '',
     registerDialog: false,
@@ -423,6 +435,9 @@ export default {
       "Please write your question here.  We will get back with you shortly.  Thanks you!"
   }),
   methods: {
+    openFlyer(){
+      window.open('20-House-ForksCorksKegs-Flyer.pdf', '_blank');
+    },
     getMyThis() {
       return this;
     },
