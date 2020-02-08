@@ -90,10 +90,36 @@
             </v-container>
           </v-flex>
         </v-layout>
-        <v-layout row wrap align-center v-if="item.photos">
+        <v-container v-if="item.photos">
+          <v-row>
+            <v-col
+              v-for="(photo, index) in item.photos"
+              :key="index"
+              class="d-flex child-flex"
+              cols="4"
+              @click="showPhoto(photo)"
+            >
+              <v-card flat tile class="d-flex" color="transparent">
+                <v-img :src="photo" aspect-ratio="1" contain style="background-color: transparent">
+                  <template v-slot:placeholder>
+                    <v-row class="fill-height ma-0" align="center" justify="center">
+                      <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+                    </v-row>
+                  </template>
+                </v-img>
+              </v-card>
+            </v-col>
+          </v-row>
+        </v-container>
+        <!-- <v-layout row wrap align-center>
           <v-flex v-for="(photo, index) in item.photos" :key="index" xs12 sm6 md4 pa-2>
             <v-card flat tile class="d-flex">
-              <v-img :src="photo" aspect-ratio="1" class="grey lighten-2" @click="imageFullScreenPath = photo; imageFullScreen = true">
+              <v-img
+                :src="photo"
+                aspect-ratio="1"
+                class="grey lighten-2"
+                @click="imageFullScreenPath = photo; imageFullScreen = true"
+              >
                 <template v-slot:placeholder>
                   <v-row class="fill-height ma-0" align="center" justify="center">
                     <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
@@ -102,7 +128,7 @@
               </v-img>
             </v-card>
           </v-flex>
-        </v-layout>
+        </v-layout>-->
       </section>
 
       <section>
@@ -232,21 +258,28 @@
 
     <v-dialog v-model="imageFullScreen">
       <v-card>
-        <v-btn fab style="position: fixed; top: 50px; right: 50px; z-index: 100" @click="imageFullScreen = false"><v-icon>mdi-close</v-icon></v-btn>
-        <div style="max-width: calc(100vw);">
-          <v-img style="width:100%;height:100%;" :src="imageFullScreenPath" contain>
-            <template v-slot:placeholder>
-              <v-row class="fill-height ma-0" align="center" justify="center">
-                <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-              </v-row>
-            </template>
-          </v-img>
-        </div>
+        <v-btn
+          fab
+          style="position: fixed; top: 50px; right: 50px; z-index: 100"
+          @click="imageFullScreen = false"
+        >
+          <v-icon>mdi-close</v-icon>
+        </v-btn>
+        <v-img :src="imageFullScreenPath" contain>
+          <template v-slot:placeholder>
+            <v-row class="fill-height ma-0" align="center" justify="center">
+              <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+            </v-row>
+          </template>
+        </v-img>
       </v-card>
     </v-dialog>
 
     <v-dialog v-model="viewFlyerDialog">
-      <embed src="20-House-ForksCorksKegs-Flyer.pdf" style="width: calc(100%); height: calc(100vh - 150px)" />
+      <embed
+        src="20-House-ForksCorksKegs-Flyer.pdf"
+        style="width: calc(100%); height: calc(100vh - 150px)"
+      />
     </v-dialog>
   </v-app>
 </template>
@@ -288,7 +321,7 @@ export default {
   data: () => ({
     viewFlyerDialog: false,
     imageFullScreen: false,
-    imageFullScreenPath: '',
+    imageFullScreenPath: "",
     registerDialog: false,
     title: "Forks, Corks, & Kegs",
     date: "Saturday, May 16, 2020",
@@ -321,13 +354,13 @@ export default {
           "Text coming soon...",
           "Text coming soon...",
           "Text coming soon..."
-          ],
-          photos: [
-            "/sponsors/thumbnail_Eavesdrop Logo (1).png",
-            "/sponsors/thumbnail_Ono Logo 3-16-17.png",
-            "/sponsors/thumbnail_solace-website-logo-e433006c5056a36_e43303d3-5056-a36a-07f76b181f2374be-Quick Preset_800x600.jpg",
-            "/sponsors/Tucked Away Logo 2.png"
-          ]
+        ],
+        photos: [
+          "/sponsors/thumbnail_Eavesdrop Logo (1).png",
+          "/sponsors/thumbnail_Ono Logo 3-16-17.png",
+          "/sponsors/thumbnail_solace-website-logo-e433006c5056a36_e43303d3-5056-a36a-07f76b181f2374be-Quick Preset_800x600.jpg",
+          "/sponsors/Tucked Away Logo 2.png"
+        ]
       },
       {
         icon: "mdi-gavel",
@@ -435,8 +468,14 @@ export default {
       "Please write your question here.  We will get back with you shortly.  Thanks you!"
   }),
   methods: {
-    openFlyer(){
-      window.open('20-House-ForksCorksKegs-Flyer.pdf', '_blank');
+    showPhoto(photo) {
+      this.imageFullScreen = true;
+      this.$nextTick(() => {
+        this.imageFullScreenPath = photo;
+      });
+    },
+    openFlyer() {
+      window.open("20-House-ForksCorksKegs-Flyer.pdf", "_blank");
     },
     getMyThis() {
       return this;
