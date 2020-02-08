@@ -51,7 +51,13 @@
             <h1 class="white--text mb-2 display-1 text-center">{{title}}</h1>
             <div class="subheading mb-4 text-center">{{date}}</div>
             <img src="@/assets/logo.png" alt="Vuetify.js" height="300" />
-            <v-btn class="mt-12" color="blue lighten-2" dark large @click="registerDialog = true">Register</v-btn>
+            <v-btn
+              class="mt-12"
+              color="blue lighten-2"
+              dark
+              large
+              @click="registerDialog = true"
+            >Register</v-btn>
           </v-layout>
         </v-parallax>
       </section>
@@ -79,38 +85,21 @@
                     <v-card-text>{{paragraph}}</v-card-text>
                   </v-card>
                 </v-flex>
-                <!-- <v-flex xs12 md4>
-                  <v-card flat class="transparent">
-                    <v-card-text class="text-center">
-                      <v-icon x-large class="blue--text text--lighten-2">mdi-flash</v-icon>
-                    </v-card-text>
-                    <v-card-title primary-title class="layout justify-center">
-                      <div class="headline">Fast development</div>
-                    </v-card-title>
-                    <v-card-text>
-                      Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
-                      Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                      Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.
-                    </v-card-text>
-                  </v-card>
-                </v-flex>
-                <v-flex xs12 md4>
-                  <v-card flat class="transparent">
-                    <v-card-text class="text-center">
-                      <v-icon x-large class="blue--text text--lighten-2">mdi-wrench</v-icon>
-                    </v-card-text>
-                    <v-card-title primary-title class="layout justify-center">
-                      <div class="headline text-center">Completely Open Sourced</div>
-                    </v-card-title>
-                    <v-card-text>
-                      Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
-                      Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                      Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.
-                    </v-card-text>
-                  </v-card>
-                </v-flex>-->
               </v-layout>
             </v-container>
+          </v-flex>
+        </v-layout>
+        <v-layout row wrap align-center v-if="item.photos">
+          <v-flex v-for="(photo, index) in item.photos" :key="index" xs12 sm6 md4 pa-2>
+            <v-card flat tile class="d-flex">
+              <v-img :src="photo" aspect-ratio="1" class="grey lighten-2">
+                <template v-slot:placeholder>
+                  <v-row class="fill-height ma-0" align="center" justify="center">
+                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+                  </v-row>
+                </template>
+              </v-img>
+            </v-card>
           </v-flex>
         </v-layout>
       </section>
@@ -120,7 +109,13 @@
           <v-layout column align-center justify-center>
             <div class="headline white--text mb-4 text-center">Put a summary tag line here</div>
             <em>Register today!</em>
-            <v-btn class="mt-12" color="blue lighten-2" dark large @click="registerDialog = true">Register</v-btn>
+            <v-btn
+              class="mt-12"
+              color="blue lighten-2"
+              dark
+              large
+              @click="registerDialog = true"
+            >Register</v-btn>
           </v-layout>
         </v-parallax>
       </section>
@@ -207,10 +202,7 @@
                 <v-text-field label="Middle name"></v-text-field>
               </v-col>
               <v-col cols="12" sm="6" md="4">
-                <v-text-field
-                  label="Last name*"
-                  required
-                ></v-text-field>
+                <v-text-field label="Last name*" required></v-text-field>
               </v-col>
               <v-col cols="12">
                 <v-text-field label="Email*" required hint="Please enter a valid email address"></v-text-field>
@@ -262,14 +254,14 @@ export default {
     //HelloWorld,
   },
 
-  created(){
-    if (!this.$cookies.isKey("darkTheme")){
-      console.log('No cookie');
+  created() {
+    if (!this.$cookies.isKey("darkTheme")) {
+      console.log("No cookie");
       this.$cookies.set("darkTheme", false);
     }
 
-    let darkTheme = this.$cookies.get('darkTheme');
-    console.log('darkTheme: ' + darkTheme);
+    let darkTheme = this.$cookies.get("darkTheme");
+    console.log("darkTheme: " + darkTheme);
     this.$vuetify.theme.dark = darkTheme == "true"; //darkTheme will be a string
   },
 
@@ -340,32 +332,79 @@ export default {
         icon: "mdi-camera",
         title: "Photos",
         text: "Photos",
-        paragraphs: [
-          lorem.generateParagraphs(1),
-          lorem.generateParagraphs(1),
-          lorem.generateParagraphs(1)
+        paragraphs: [],
+        photos: [
+          "/images/thumbnail_15.jpg",
+          "/images/thumbnail_17.jpg",
+          "/images/thumbnail_32.jpg",
+          "/images/thumbnail_band.jpg",
+          "/images/thumbnail_beer.jpg",
+          "/images/thumbnail_food trucks.jpg",
+          "/images/thumbnail_Forks glasses.jpg",
+          "/images/thumbnail_people.jpg",
+          "/images/thumbnail_standrewpic1.jpg",
+          "/images/thumbnail_tent day.jpg",
+          "/images/thumbnail_tent.jpg"
         ]
       }
     ],
     itemsFooter: [
-      { icon: "mdi-comment", text: "Send Feedback", clickEvent: (myThis) => { window.open("mailto:"+myThis.emailTo+'?cc='+myThis.emailCC+'&subject='+myThis.feedbackEmailSub+'&body='+myThis.feedbackEmailBody); }},
-      { icon: "mdi-contact-mail", text: "Contact Us", clickEvent: (myThis) => { window.open("mailto:"+myThis.emailTo+'?cc='+myThis.emailCC+'&subject='+myThis.contactEmailSub+'&body='+myThis.contactEmailBody); }},
-      { icon: "mdi-account-plus", text: "Register", clickEvent: (myThis) => { myThis.registerDialog = true; } }
+      {
+        icon: "mdi-comment",
+        text: "Send Feedback",
+        clickEvent: myThis => {
+          window.open(
+            "mailto:" +
+              myThis.emailTo +
+              "?cc=" +
+              myThis.emailCC +
+              "&subject=" +
+              myThis.feedbackEmailSub +
+              "&body=" +
+              myThis.feedbackEmailBody
+          );
+        }
+      },
+      {
+        icon: "mdi-contact-mail",
+        text: "Contact Us",
+        clickEvent: myThis => {
+          window.open(
+            "mailto:" +
+              myThis.emailTo +
+              "?cc=" +
+              myThis.emailCC +
+              "&subject=" +
+              myThis.contactEmailSub +
+              "&body=" +
+              myThis.contactEmailBody
+          );
+        }
+      },
+      {
+        icon: "mdi-account-plus",
+        text: "Register",
+        clickEvent: myThis => {
+          myThis.registerDialog = true;
+        }
+      }
     ],
     scrollOptions: {
       duration: 600,
       offset: 0,
       easing: "easeInOutCubic"
     },
-    emailTo: 'parish.office@st-andrew.org',
-    emailCC: 'parish.office@st-andrew.org',
-    feedbackEmailSub: 'Forks, Corks, and Kegs Feedback',
-    feedbackEmailBody: 'Please write feedback here.  We will get back with you shortly.  Thanks you!',
-    contactEmailSub: 'Contact Forks, Corks, and Kegs',
-    contactEmailBody: 'Please write your question here.  We will get back with you shortly.  Thanks you!',
-  }),  
+    emailTo: "parish.office@st-andrew.org",
+    emailCC: "parish.office@st-andrew.org",
+    feedbackEmailSub: "Forks, Corks, and Kegs Feedback",
+    feedbackEmailBody:
+      "Please write feedback here.  We will get back with you shortly.  Thanks you!",
+    contactEmailSub: "Contact Forks, Corks, and Kegs",
+    contactEmailBody:
+      "Please write your question here.  We will get back with you shortly.  Thanks you!"
+  }),
   methods: {
-    getMyThis(){
+    getMyThis() {
       return this;
     },
     toggleTheme() {
