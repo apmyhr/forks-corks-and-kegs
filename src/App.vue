@@ -76,12 +76,6 @@
               <v-layout row wrap align-center>
                 <v-flex xs12 md4 v-for="(paragraph, index) in item.paragraphs" v-bind:key="index">
                   <v-card flat class="transparent">
-                    <!-- <v-card-text class="text-center">
-                      <v-icon x-large class="blue--text text--lighten-2">mdi-palette</v-icon>
-                    </v-card-text>
-                    <v-card-title primary-title class="layout justify-center">
-                      <div class="headline text-center">Material Design</div>
-                    </v-card-title>-->
                     <v-card-text>{{paragraph}}</v-card-text>
                   </v-card>
                 </v-flex>
@@ -92,7 +86,7 @@
         <v-layout row wrap align-center v-if="item.photos">
           <v-flex v-for="(photo, index) in item.photos" :key="index" xs12 sm6 md4 pa-2>
             <v-card flat tile class="d-flex">
-              <v-img :src="photo" aspect-ratio="1" class="grey lighten-2">
+              <v-img :src="photo" aspect-ratio="1" class="grey lighten-2" @click="imageFullScreenPath = photo; imageFullScreen = true">
                 <template v-slot:placeholder>
                   <v-row class="fill-height ma-0" align="center" justify="center">
                     <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
@@ -228,24 +222,39 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
+
+    <v-dialog v-model="imageFullScreen">
+      <v-card>
+        <v-btn fab style="position: fixed; top: 50px; right: 50px; z-index: 100" @click="imageFullScreen = false"><v-icon>mdi-close</v-icon></v-btn>
+        <div style="max-width: calc(100vw);">
+          <v-img style="width:100%;height:100%;" :src="imageFullScreenPath" contain>
+            <template v-slot:placeholder>
+              <v-row class="fill-height ma-0" align="center" justify="center">
+                <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+              </v-row>
+            </template>
+          </v-img>
+        </div>
+      </v-card>
+    </v-dialog>
   </v-app>
 </template>
 
 <script>
 //import HelloWorld from './components/HelloWorld';
 
-import { LoremIpsum } from "lorem-ipsum";
+// import { LoremIpsum } from "lorem-ipsum";
 
-const lorem = new LoremIpsum({
-  sentencesPerParagraph: {
-    max: 12,
-    min: 6
-  },
-  wordsPerSentence: {
-    max: 24,
-    min: 6
-  }
-});
+// const lorem = new LoremIpsum({
+//   sentencesPerParagraph: {
+//     max: 12,
+//     min: 6
+//   },
+//   wordsPerSentence: {
+//     max: 24,
+//     min: 6
+//   }
+// });
 
 export default {
   name: "App",
@@ -266,6 +275,8 @@ export default {
   },
 
   data: () => ({
+    imageFullScreen: false,
+    imageFullScreenPath: '',
     registerDialog: false,
     title: "Forks, Corks, & Kegs",
     date: "Saturday, May 16, 2020",
@@ -286,26 +297,34 @@ export default {
         title: "Tickets",
         text: "Tickets",
         paragraphs: [
-          lorem.generateParagraphs(1),
-          lorem.generateParagraphs(1),
-          lorem.generateParagraphs(1)
+          "Text coming soon...",
+          "Text coming soon...",
+          "Text coming soon..."
         ]
       },
       {
         icon: "mdi-gift-outline",
         text: "Sponsors",
-        paragraphs: [lorem.generateParagraphs(1), lorem.generateParagraphs(1)]
+        paragraphs: [
+          "Text coming soon...",
+          "Text coming soon...",
+          "Text coming soon..."
+          ],
+          photos: [
+            "/sponsors/thumbnail_Eavesdrop Logo (1).png",
+            "/sponsors/thumbnail_Ono Logo 3-16-17.png",
+            "/sponsors/thumbnail_solace-website-logo-e433006c5056a36_e43303d3-5056-a36a-07f76b181f2374be-Quick Preset_800x600.jpg",
+            "/sponsors/Tucked Away Logo 2.png"
+          ]
       },
       {
         icon: "mdi-gavel",
         title: "Auction",
         text: "Auction",
         paragraphs: [
-          lorem.generateParagraphs(1),
-          lorem.generateParagraphs(1),
-          lorem.generateParagraphs(1),
-          lorem.generateParagraphs(1),
-          lorem.generateParagraphs(1)
+          "Text coming soon...",
+          "Text coming soon...",
+          "Text coming soon..."
         ]
       },
       {
@@ -313,9 +332,9 @@ export default {
         title: "BeerWine",
         text: "Beer & Wine",
         paragraphs: [
-          lorem.generateParagraphs(1),
-          lorem.generateParagraphs(1),
-          lorem.generateParagraphs(1)
+          "Text coming soon...",
+          "Text coming soon...",
+          "Text coming soon..."
         ]
       },
       {
@@ -323,9 +342,9 @@ export default {
         title: "FoodTrucks",
         text: "Food Trucks",
         paragraphs: [
-          lorem.generateParagraphs(1),
-          lorem.generateParagraphs(1),
-          lorem.generateParagraphs(1)
+          "Text coming soon...",
+          "Text coming soon...",
+          "Text coming soon..."
         ]
       },
       {
