@@ -289,7 +289,7 @@
       />
     </v-dialog>
     <v-dialog v-model="showAuctionThanks" width="450"> 
-      <v-card>
+      <v-card dark>
         <v-list>
           <v-list-item v-for="(item, index) in auctionThanksJson" v-bind:key="index" @click="openUrl(item.url)">            
             <v-list-item-icon>
