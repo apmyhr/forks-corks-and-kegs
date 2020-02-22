@@ -81,11 +81,20 @@
           <v-flex xs12>
             <v-container grid-list-xl>
               <v-layout row wrap align-center>
+                <v-flex md4 v-if="item.paragraphs.length == 1 && $vuetify.breakpoint.mdAndUp"></v-flex>
                 <v-flex xs12 md4 v-for="(paragraph, index) in item.paragraphs" v-bind:key="index">
                   <v-card flat class="transparent">
-                    <v-card-text>{{paragraph}}</v-card-text>
+                    <v-card-text v-html="paragraph"></v-card-text>
                   </v-card>
                 </v-flex>
+              </v-layout>
+
+              <v-layout v-if="item.title == 'Auction'" row wrap align-center>
+                <v-flex md4 xs12></v-flex>
+                <v-flex md4 xs12>                  
+                  <v-btn color="success" @click="showAuctionThanks = true">A Special Thank you to Our 2019 Auction Donors</v-btn>
+                </v-flex>
+                <v-flex md4 xs12></v-flex>
               </v-layout>
             </v-container>
           </v-flex>
@@ -279,6 +288,31 @@
         style="width: calc(100%); height: calc(100vh - 150px)"
       />
     </v-dialog>
+    <v-dialog v-model="showAuctionThanks" width="450"> 
+      <v-card>
+        <v-list>
+          <v-list-item v-for="(item, index) in auctionThanksJson" v-bind:key="index" @click="openUrl(item.url)">            
+            <v-list-item-icon>
+              <v-icon color="yellow">mdi-star</v-icon>
+            </v-list-item-icon>
+
+            <v-list-item-content>
+              <v-list-item-title v-text="item.title"></v-list-item-title>
+            </v-list-item-content>
+
+            <v-list-item-avatar>
+              <v-btn icon color="info"><v-icon>mdi-web</v-icon></v-btn>
+            </v-list-item-avatar>
+            <!-- <v-list-item-icon>
+              <v-icon>mdi-star</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title v-text="item.title"></v-list-item-title>
+            </v-list-item-content> -->
+          </v-list-item>
+        </v-list>
+      </v-card>
+    </v-dialog>
   </v-app>
 </template>
 
@@ -297,6 +331,8 @@
 //     min: 6
 //   }
 // });
+
+import auctionJson from './auctionThanks.json'
 
 export default {
   name: "App",
@@ -317,6 +353,7 @@ export default {
   },
 
   data: () => ({
+    showAuctionThanks: false,
     viewFlyerDialog: false,
     imageFullScreen: false,
     imageFullScreenPath: "",
@@ -340,18 +377,14 @@ export default {
         title: "Tickets",
         text: "Tickets",
         paragraphs: [
-          "Text coming soon...",
-          "Text coming soon...",
-          "Text coming soon..."
+          "Tickets can be purchased on the <a href='https://events.handbid.com/auctions/st-andrew-forks-corks-and-kegs-2020'>Handbid website</a> for $55 before May 24th, and $65 the week of the event. Each ticket includes all you can eat food at the food trucks and our Paris Baguette-sponsored cake table, all you can drink beer and wine, and a tasting glass.",
         ]
       },
       {
         icon: "mdi-gift-outline",
         text: "Sponsors",
         paragraphs: [
-          "Text coming soon...",
-          "Text coming soon...",
-          "Text coming soon..."
+          "Thank you to our generous sponsors in 2019!  Business Sponsors were Clawes Carpets, FH Furr, C&R Printing, ClickFXMarketing, Paris Baguette, and Supplyline Inc.  Our Family Sponsors were The Maestri Family and Duane & Andrew McCliggott.  If you are interested in being a sponsor for 2020, please <a href='mailto:crystalmac7@gmail.com'>contact us</a> for details.",
         ],
         photos: [
           "/sponsors/thumbnail_Eavesdrop Logo (1).png",
@@ -365,9 +398,7 @@ export default {
         title: "Auction",
         text: "Auction",
         paragraphs: [
-          "Text coming soon...",
-          "Text coming soon...",
-          "Text coming soon..."
+          "The Forks, Corks & Kegs silent auction includes tropical vacation packages, Bethany Beach house vacations, Diamond Club Nationals tickets (sponsored by FH Furr), Capitols tickets, Virginia winery tasting tours, restaurant gift cards, summer camps, sports lessons, museum tickets, children’s birthday party packages, skiing, golf, theater tickets, and every sort of local activity from laser tag to zip lining that will make your family very happy.  Bidding will open at 6:00 am May 8th on our <a href='https://events.handbid.com/auctions/st-andrew-forks-corks-and-kegs-2020'>Handbid online auction</a> and close at 10:00 pm the night of May 16th.  All purchased items can be picked up at the event, or the following Monday in the school office."
         ]
       },
       {
@@ -465,6 +496,18 @@ export default {
     contactEmailBody:
       "Please write your question here.  We will get back with you shortly.  Thanks you!"
   }),
+  computed: {
+    auctionThanksJson(){
+      console.log('Hello')
+      if (auctionJson){
+        console.log(auctionJson);
+        return auctionJson;
+      }
+      else{
+        return [];
+      }
+    }
+  },
   methods: {
     overrideContain(photo){
       //Need to use Contain on this one photo because it shows "UCKED"
@@ -478,6 +521,9 @@ export default {
     },
     openFlyer() {
       window.open("20-House-ForksCorksKegs-Flyer.pdf", "_blank");
+    },
+    openUrl(URL) {
+      window.open(URL, '_blank');
     },
     getMyThis() {
       return this;
