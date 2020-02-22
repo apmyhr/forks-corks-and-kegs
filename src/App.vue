@@ -162,11 +162,9 @@
             <v-flex xs12 sm4>
               <v-card flat class="transparent">
                 <v-card-title primary-title class="layout justify-center">
-                  <div class="headline">Company info</div>
+                  <div class="headline">PTO</div>
                 </v-card-title>
-                <v-card-text>
-                  Company info coming soon...
-                </v-card-text>
+                <v-card-text v-text="companyInfo"></v-card-text>
               </v-card>
             </v-flex>
             <v-flex xs12 sm4 offset-sm1>
@@ -176,15 +174,15 @@
                 </v-card-title>
                 <v-card-text>Please feel free to contact us through either of the following methods.</v-card-text>
                 <v-list class="transparent">
-                  <v-list-item>
+                  <!-- <v-list-item>
                     <v-list-item-action>
                       <v-icon class="blue--text text--lighten-2">mdi-phone</v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
                       <v-list-item-title>(703) 817-1770</v-list-item-title>
                     </v-list-item-content>
-                  </v-list-item>
-                  <v-list-item>
+                  </v-list-item> -->
+                  <v-list-item @click="openUrl('https://www.google.com/maps/place/6720+Union+Mill+Rd,+Clifton,+VA+20124')">
                     <v-list-item-action>
                       <v-icon class="blue--text text--lighten-2">mdi-map-marker</v-icon>
                     </v-list-item-action>
@@ -192,12 +190,12 @@
                       <v-list-item-title>6720B Union Mill Rd, Clifton, VA 20124</v-list-item-title>
                     </v-list-item-content>
                   </v-list-item>
-                  <v-list-item>
+                  <v-list-item @click="openUrl('mailto:' + emailTo)">
                     <v-list-item-action>
                       <v-icon class="blue--text text--lighten-2">mdi-email</v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
-                      <v-list-item-title>Somebody@somewhere.com</v-list-item-title>
+                      <v-list-item-title>{{emailTo}}</v-list-item-title>
                     </v-list-item-content>
                   </v-list-item>
                 </v-list>
@@ -406,9 +404,7 @@ export default {
         title: "BeerWine",
         text: "Beer & Wine",
         paragraphs: [
-          "Text coming soon...",
-          "Text coming soon...",
-          "Text coming soon..."
+          "Past breweries that have sponsored Forks, Corks & Kegs include Old Bust Head Brewery, Tucked Away Brewing Co, Ono Brewing Co, Mustang Sally Brewery, Solace Brewing Co, Eavesdrop Brewing Co, Growling Bear Brewery, Heritage Brewery, and Bad Wolf Brewing.  Each brewery brings a selection of four different beers for our guests to enjoy.  A table of Virginia wines is also included in the ticket with over 50 wines to sample.  This year’s wine table will be sponsored by Rappahannock Cellars.",
         ]
       },
       {
@@ -416,9 +412,7 @@ export default {
         title: "FoodTrucks",
         text: "Food Trucks",
         paragraphs: [
-          "Text coming soon...",
-          "Text coming soon...",
-          "Text coming soon..."
+          "All you care to enjoy at our large selection of food trucks is included in the ticket price.  Past favorites have included Sloppy Mama’s BBQ sandwiches, Mama’s Donuts hot apple cider donuts, Crepe Love’s custom crepes, Peruvian Brothers ceviche and sliders, the amazing empanadas of Empanadas de Mendoza, Urban Poutine’s many forms of cheesy fries, Indian street food, gourmet tater tots, and more…  We switch up the food trucks a bit each year so our guests can try new things each time.  2020’s food truck selection will be posted soon!  St Andrew’s favorite, Paris Baguette, will also be sponsoring their amazing cake table under the tent as well.",
         ]
       },
       {
@@ -487,8 +481,9 @@ export default {
       offset: 0,
       easing: "easeInOutCubic"
     },
-    emailTo: "parish.office@st-andrew.org",
-    emailCC: "parish.office@st-andrew.org",
+    companyInfo: "The St Andrew School PTO serves the students of St Andrew the Apostle School in Clifton, Virginia.  We are a 501(c)3 non-profit organization.  All funds raised through Forks, Corks & Kegs goes directly to the talented students of St Andrew’s",
+    emailTo: "forkscorksandkegs@gmail.com",
+    emailCC: "",
     feedbackEmailSub: "Forks, Corks, and Kegs Feedback",
     feedbackEmailBody:
       "Please write feedback here.  We will get back with you shortly.  Thanks you!",
