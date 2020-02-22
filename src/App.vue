@@ -89,12 +89,17 @@
                 </v-flex>
               </v-layout>
 
+              
+
               <v-layout v-if="item.title == 'Auction'" row wrap align-center>
-                <v-flex md4 xs12></v-flex>
-                <v-flex md4 xs12>                  
-                  <v-btn color="success" @click="showAuctionThanks = true">A Special Thank you to Our 2019 Auction Donors</v-btn>
+                <v-flex xs12>                  
                 </v-flex>
-                <v-flex md4 xs12></v-flex>
+              </v-layout>
+              <v-layout v-if="item.title == 'Auction'" row wrap align-center>
+                <v-flex xs12>
+                 <span class="subtitle-1 centerElement">A Special Thank you to Our 2019 Auction Donors</span>
+                  <v-btn color="success" class="centerElement" @click="showAuctionThanks = true">View Donors</v-btn>
+                </v-flex>
               </v-layout>
             </v-container>
           </v-flex>
@@ -532,3 +537,12 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.centerElement{
+  text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
