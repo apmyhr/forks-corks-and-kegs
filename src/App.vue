@@ -385,6 +385,8 @@ export default {
           "Thank you to our generous sponsors in 2019!  Business Sponsors were Clawes Carpets, FH Furr, C&R Printing, ClickFXMarketing, Paris Baguette, and Supplyline Inc.  Our Family Sponsors were The Maestri Family and Duane & Andrew McCliggott.  If you are interested in being a sponsor for 2020, please <a href='mailto:crystalmac7@gmail.com'>contact us</a> for details.",
         ],
         photos: [
+          "/sponsors/MSB.png",
+          "/sponsors/ParisBaguette.png",
           "/sponsors/thumbnail_Eavesdrop Logo (1).png",
           "/sponsors/thumbnail_Ono Logo 3-16-17.png",
           "/sponsors/thumbnail_solace-website-logo-e433006c5056a36_e43303d3-5056-a36a-07f76b181f2374be-Quick Preset_800x600.jpg",
