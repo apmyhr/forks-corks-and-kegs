@@ -56,7 +56,7 @@
               color="blue lighten-2"
               dark
               large
-              @click="registerDialog = true"
+              @click="openUrl(handbidWebsite)"
             >Register</v-btn>
             <v-btn
               class="mt-12"
@@ -155,7 +155,7 @@
               color="blue lighten-2"
               dark
               large
-              @click="registerDialog = true"
+              @click="openUrl(handbidWebsite)"
             >Register</v-btn>
           </v-layout>
         </v-parallax>
@@ -233,22 +233,19 @@
           <v-container>
             <v-row>
               <v-col cols="12" sm="6" md="4">
-                <v-text-field label="First name*" required></v-text-field>
+                <v-text-field v-model="registrationFirstName" label="First name*" required></v-text-field>
               </v-col>
               <v-col cols="12" sm="6" md="4">
-                <v-text-field label="Middle name"></v-text-field>
+                <v-text-field v-model="registrationMiddleName" label="Middle name"></v-text-field>
               </v-col>
               <v-col cols="12" sm="6" md="4">
-                <v-text-field label="Last name*" required></v-text-field>
+                <v-text-field v-model="registrationLastName" label="Last name*" required></v-text-field>
               </v-col>
+              <!-- <v-col cols="12">
+                <v-text-field v-model="registrationEmail" label="Email*" required hint="Please enter a valid email address"></v-text-field>
+              </v-col> -->
               <v-col cols="12">
-                <v-text-field label="Email*" required hint="Please enter a valid email address"></v-text-field>
-              </v-col>
-              <v-col cols="12">
-                <v-text-field label="Password*" type="password" required></v-text-field>
-              </v-col>
-              <v-col cols="12">
-                <v-autocomplete
+                <v-autocomplete v-model="registrationInterestedIn"
                   :items="['Tickets', 'Donating to Auction', 'Sponsoring', 'Volunteering']"
                   label="Interested in"
                   multiple
@@ -261,7 +258,7 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="blue darken-1" text @click="registerDialog = false">Close</v-btn>
-          <v-btn color="blue darken-1" text @click="registerDialog = false">Submit</v-btn>
+          <v-btn color="blue darken-1" text @click="registerDialog = false; submitRegistration()">Submit</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -479,7 +476,7 @@ export default {
         icon: "mdi-account-plus",
         text: "Register",
         clickEvent: myThis => {
-          myThis.registerDialog = true;
+          myThis.openUrl(myThis.handbidWebsite);
         }
       }
     ],
@@ -496,7 +493,13 @@ export default {
       "Please write feedback here.  We will get back with you shortly.  Thanks you!",
     contactEmailSub: "Contact Forks, Corks, and Kegs",
     contactEmailBody:
-      "Please write your question here.  We will get back with you shortly.  Thanks you!"
+      "Please write your question here.  We will get back with you shortly.  Thanks you!",
+    registrationFirstName: "",
+    registrationMiddleName: "",
+    registrationLastName: "",
+    // registrationEmail: "",
+    registrationInterestedIn: [],
+    handbidWebsite: "https://events.handbid.com/auctions/st-andrew-forks-corks-and-kegs-2020"
   }),
   computed: {
     auctionThanksJson(){
@@ -531,6 +534,40 @@ export default {
     toggleTheme() {
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
       this.$cookies.set("darkTheme", this.$vuetify.theme.dark);
+    },
+    submitRegistration() {
+      let fullName = this.registrationFirstName;
+      if (this.registrationMiddleName){
+        fullName += ' ' + this.registrationMiddleName;
+      }
+      fullName += ' ' + this.registrationLastName;
+      let subject = "Forks, Corks, & Kegs Registration for " + fullName;
+      let body = `I, ${fullName}, would like to register for Forks, Corks, and Kegs.\r\n`
+
+      let interested = this.registrationInterestedIn.slice();
+      let lastInterested = interested.pop();
+
+      if (interested.length > 0){
+        body += `I'm interested in ${interested.join(', ')} and ${lastInterested}.`
+      }
+      else{
+        body += `I'm interested in ${lastInterested}.`
+      }
+
+      //Properly encode the strings first
+      subject = encodeURIComponent(subject);
+      body = encodeURIComponent(body);
+
+      window.open(
+            "mailto:" +
+              this.emailTo +
+              "?cc=" +
+              this.emailCC +
+              "&subject=" +
+              subject +
+              "&body=" +
+              body
+          );
     }
   }
 };
