@@ -347,7 +347,7 @@ export default {
   created() {
     if (!this.$cookies.isKey("darkTheme")) {
       console.log("No cookie");
-      this.$cookies.set("darkTheme", false);
+      this.$cookies.set("darkTheme", true);
     }
 
     let darkTheme = this.$cookies.get("darkTheme");
