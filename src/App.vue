@@ -1,5 +1,5 @@
 <template>
-  <v-app light>
+  <v-app dark>
     <v-app-bar :clipped-left="$vuetify.breakpoint.lgAndUp" app color="blue darken-3" dark>
       <v-toolbar-title style="width: 300px">
         <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
@@ -148,8 +148,8 @@
       <section>
         <v-parallax src="@/assets/beer.jpg" height="380">
           <v-layout column align-center justify-center>
-            <div class="headline white--text mb-4 text-center">Put a summary tag line here</div>
-            <em>Register today!</em>
+            <div class="headline outlinedPictureText mb-4 text-center">{{'Unlimted Food & Drinks'}}</div>
+            <em class="outlinedPictureText">Register today!</em>
             <v-btn
               class="mt-12"
               color="blue lighten-2"
@@ -500,9 +500,7 @@ export default {
   }),
   computed: {
     auctionThanksJson(){
-      console.log('Hello')
       if (auctionJson){
-        console.log(auctionJson);
         return auctionJson;
       }
       else{
@@ -544,5 +542,11 @@ export default {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.outlinedPictureText{
+  font-weight: bold;
+	color: white;
+	text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
 }
 </style>
