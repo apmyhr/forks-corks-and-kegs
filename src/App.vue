@@ -148,7 +148,7 @@
       <section>
         <v-parallax src="@/assets/beer.jpg" height="380">
           <v-layout column align-center justify-center>
-            <div class="headline outlinedPictureText mb-4 text-center">{{'Unlimted Food & Drinks'}}</div>
+            <div class="headline outlinedPictureText mb-4 text-center">{{'Unlimited Food & Drinks'}}</div>
             <em class="outlinedPictureText">Register today!</em>
             <v-btn
               class="mt-12"
@@ -400,7 +400,7 @@ export default {
         title: "Auction",
         text: "Auction",
         paragraphs: [
-          "The Forks, Corks & Kegs silent auction includes tropical vacation packages, Bethany Beach house vacations, Diamond Club Nationals tickets (sponsored by FH Furr), Capitols tickets, Virginia winery tasting tours, restaurant gift cards, summer camps, sports lessons, museum tickets, children’s birthday party packages, skiing, golf, theater tickets, and every sort of local activity from laser tag to zip lining that will make your family very happy.  Bidding will open at 6:00 am May 8th on our <a href='https://events.handbid.com/auctions/st-andrew-forks-corks-and-kegs-2020'>Handbid online auction</a> and close at 10:00 pm the night of May 16th.  All purchased items can be picked up at the event, or the following Monday in the school office."
+          "The Forks, Corks & Kegs silent auction includes tropical vacation packages, Bethany Beach house vacations, Diamond Club Nationals tickets (sponsored by FH Furr), Capitals tickets, Virginia winery tasting tours, restaurant gift cards, summer camps, sports lessons, museum tickets, children’s birthday party packages, skiing, golf, theater tickets, and every sort of local activity from laser tag to zip lining that will make your family very happy.  Bidding will open at 6:00 am May 8th on our <a href='https://events.handbid.com/auctions/st-andrew-forks-corks-and-kegs-2020'>Handbid online auction</a> and close at 10:00 pm the night of May 16th.  All purchased items can be picked up at the event, or the following Monday in the school office."
         ]
       },
       {
