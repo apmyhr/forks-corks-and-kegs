@@ -1,9 +1,17 @@
 <template>
   <v-app dark>
     <v-app-bar :clipped-left="$vuetify.breakpoint.lgAndUp" app color="blue darken-3" dark>
-      <v-toolbar-title style="width: 300px">
+      <v-toolbar-title>
         <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
         <span>{{title}}</span>
+      </v-toolbar-title>
+      <v-toolbar-title>
+        <v-tooltip bottom>
+          <template v-slot:activator="{ on }">
+            <v-icon class="ma-2" color="error" dark v-on="on">mdi-alert-circle</v-icon>
+          </template>
+          <span>{{covidMessage}}</span>
+        </v-tooltip>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn text icon @click="toggleTheme">
@@ -49,7 +57,8 @@
         <v-parallax src="@/assets/wine_cheese2.jpg" height="600">
           <v-layout column align-center justify-center class="white--text">
             <h1 class="white--text mb-2 display-1 text-center">{{title}}</h1>
-            <div class="subheading mb-4 text-center">{{date}}</div>
+            <div class="subheading mb-4 text-center" style="text-decoration: line-through">{{date}}</div>
+            <div class="subheading mb-4 text-center red--text">{{covidMessage}}</div>
             <img src="@/assets/logo.png" alt="Vuetify.js" height="300" />
             <v-btn
               class="mt-12"
@@ -360,6 +369,7 @@ export default {
     registerDialog: false,
     title: "Forks, Corks, & Kegs",
     date: "Saturday, May 16, 2020",
+    covidMessage: "Due to COVID19 this years event has been cancelled",
     drawer: null,
     items: [
       {
@@ -377,18 +387,17 @@ export default {
         title: "Tickets",
         text: "Tickets",
         paragraphs: [
-          "Tickets can be purchased on the <a href='https://events.handbid.com/auctions/st-andrew-forks-corks-and-kegs-2020'>Handbid website</a> for $55 before May 24th, and $65 the week of the event. Each ticket includes all you can eat food at the food trucks and our Paris Baguette-sponsored cake table, all you can drink beer and wine, and a tasting glass.",
+          "Tickets can be purchased on the <a href='https://events.handbid.com/auctions/st-andrew-forks-corks-and-kegs-2020'>Handbid website</a> for $55 before May 24th, and $65 the week of the event. Each ticket includes all you can eat food at the food trucks, all you can drink beer and wine, and a tasting glass.",
         ]
       },
       {
         icon: "mdi-gift-outline",
         text: "Sponsors",
         paragraphs: [
-          "Thank you to our generous sponsors in 2019!  Business Sponsors were Clawes Carpets, FH Furr, C&R Printing, ClickFXMarketing, Paris Baguette, and Supplyline Inc.  Our Family Sponsors were The Maestri Family and Duane & Andrew McCliggott.  If you are interested in being a sponsor for 2020, please <a href='mailto:crystalmac7@gmail.com'>contact us</a> for details.",
+          "Thank you to our generous sponsors in 2019!  Business Sponsors were Clawes Carpets, FH Furr, C&R Printing, ClickFXMarketing, and Supplyline Inc.  Our Family Sponsors were The Maestri Family and Duane & Andrew McCliggott.  If you are interested in being a sponsor for 2020, please <a href='mailto:crystalmac7@gmail.com'>contact us</a> for details.",
         ],
         photos: [
           "/sponsors/MSB.png",
-          "/sponsors/ParisBaguette.png",
           "/sponsors/thumbnail_Eavesdrop Logo (1).png",
           "/sponsors/thumbnail_Ono Logo 3-16-17.png",
           "/sponsors/thumbnail_solace-website-logo-e433006c5056a36_e43303d3-5056-a36a-07f76b181f2374be-Quick Preset_800x600.jpg",
@@ -416,7 +425,7 @@ export default {
         title: "FoodTrucks",
         text: "Food Trucks",
         paragraphs: [
-          "All you care to enjoy at our large selection of food trucks is included in the ticket price.  Past favorites have included Sloppy Mama’s BBQ sandwiches, Mama’s Donuts hot apple cider donuts, Crepe Love’s custom crepes, Peruvian Brothers ceviche and sliders, the amazing empanadas of Empanadas de Mendoza, Urban Poutine’s many forms of cheesy fries, Indian street food, gourmet tater tots, and more…  We switch up the food trucks a bit each year so our guests can try new things each time.  2020’s food truck selection will be posted soon!  St Andrew’s favorite, Paris Baguette, will also be sponsoring their amazing cake table under the tent as well.",
+          "All you care to enjoy at our large selection of food trucks is included in the ticket price.  Past favorites have included Sloppy Mama’s BBQ sandwiches, Mama’s Donuts hot apple cider donuts, Crepe Love’s custom crepes, Peruvian Brothers ceviche and sliders, the amazing empanadas of Empanadas de Mendoza, Urban Poutine’s many forms of cheesy fries, Indian street food, gourmet tater tots, and more…  We switch up the food trucks a bit each year so our guests can try new things each time.  2020’s food truck selection will be posted soon!",
         ]
       },
       {
