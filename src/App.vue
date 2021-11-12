@@ -5,14 +5,6 @@
         <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
         <span>{{title}}</span>
       </v-toolbar-title>
-      <v-toolbar-title>
-        <v-tooltip bottom>
-          <template v-slot:activator="{ on }">
-            <v-icon class="ma-2" color="error" dark v-on="on">mdi-alert-circle</v-icon>
-          </template>
-          <span>{{covidMessage}}</span>
-        </v-tooltip>
-      </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn text icon @click="toggleTheme">
         <v-icon>mdi-invert-colors</v-icon>
@@ -52,13 +44,12 @@
       </template>
     </v-navigation-drawer>
 
-    <v-content>
-      <section>
+    <v-main>
+      <section dark>
         <v-parallax src="@/assets/wine_cheese2.jpg" height="600">
           <v-layout column align-center justify-center class="white--text">
-            <h1 class="white--text mb-2 display-1 text-center">{{title}}</h1>
-            <div class="subheading mb-4 text-center" style="text-decoration: line-through">{{date}}</div>
-            <div class="subheading mb-4 text-center red--text">{{covidMessage}}</div>
+            <span class="text-h1 ma-4 pt-4 text-center">{{title}}</span>
+            <div class="text-subtitle-1 mb-4 text-center">{{date}}</div>
             <img src="@/assets/logo.png" alt="Vuetify.js" height="300" />
             <v-btn
               class="mt-12"
@@ -232,7 +223,7 @@
           </v-flex>
         </v-layout>-->
       </v-footer>
-    </v-content>
+    </v-main>
     <v-dialog v-model="registerDialog" max-width="600px">
       <v-card>
         <v-card-title>
@@ -368,8 +359,7 @@ export default {
     imageFullScreenPath: "",
     registerDialog: false,
     title: "Forks, Corks, & Kegs",
-    date: "Saturday, May 16, 2020",
-    covidMessage: "Due to COVID19 this years event has been cancelled",
+    date: "Saturday, May 21st 2022 at 6:00 PM",
     drawer: null,
     items: [
       {
