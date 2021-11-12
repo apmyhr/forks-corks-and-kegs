@@ -501,7 +501,7 @@ export default {
         title: "Auction",
         text: "Auction",
         paragraphs: [
-          "The Forks, Corks & Kegs silent auction includes tropical vacation packages, Bethany Beach house vacations, Diamond Club Nationals tickets (sponsored by FH Furr), Capitals tickets, Virginia winery tasting tours, restaurant gift cards, summer camps, sports lessons, museum tickets, children’s birthday party packages, skiing, golf, theater tickets, and every sort of local activity from laser tag to zip lining that will make your family very happy.  Bidding will open at 6:00 am May 8th on our <a href='https://events.handbid.com/auctions/st-andrew-forks-corks-and-kegs-2020'>Handbid online auction</a> and close at 10:00 pm the night of May 16th.  All purchased items can be picked up at the event, or the following Monday in the school office.",
+          "The Forks, Corks & Kegs silent auction includes tropical vacation packages, Bethany Beach house vacations, Diamond Club Nationals tickets (sponsored by FH Furr), Capitals tickets, Virginia winery tasting tours, restaurant gift cards, summer camps, sports lessons, museum tickets, children’s birthday party packages, skiing, golf, theater tickets, and every sort of local activity from laser tag to zip lining that will make your family very happy.  Bidding will open at 6:00 am May 14th on our <a href='https://events.handbid.com/auctions/st-andrew-forks-corks-and-kegs-2020'>Handbid online auction</a> and close at 10:00 pm the night of May 21st.  All purchased items can be picked up at the event, or the following Monday in the school office.",
         ],
       },
       {
@@ -509,7 +509,7 @@ export default {
         title: "BeerWine",
         text: "Beer & Wine",
         paragraphs: [
-          "Past breweries that have sponsored Forks, Corks & Kegs include Old Bust Head Brewery, Tucked Away Brewing Co, Ono Brewing Co, Mustang Sally Brewery, Solace Brewing Co, Eavesdrop Brewing Co, Growling Bear Brewery, Heritage Brewery, and Bad Wolf Brewing.  Each brewery brings a selection of four different beers for our guests to enjoy.  A table of Virginia wines is also included in the ticket with over 50 wines to sample.  This year’s wine table will be sponsored by Rappahannock Cellars.",
+          "Past breweries that have sponsored Forks, Corks & Kegs include Old Bust Head Brewery, Tucked Away Brewing Co, Ono Brewing Co, Mustang Sally Brewery, Solace Brewing Co, Eavesdrop Brewing Co, Growling Bear Brewery, Heritage Brewery, and Bad Wolf Brewing. Each brewery brings a selection of four different beers for our guests to enjoy. A table of Virginia wines is also included in the ticket with over 50 wines to sample. This year’s wine table will be sponsored by TBD.",
         ],
       },
       {
@@ -517,7 +517,7 @@ export default {
         title: "FoodTrucks",
         text: "Food Trucks",
         paragraphs: [
-          "All you care to enjoy at our large selection of food trucks is included in the ticket price.  Past favorites have included Sloppy Mama’s BBQ sandwiches, Mama’s Donuts hot apple cider donuts, Crepe Love’s custom crepes, Peruvian Brothers ceviche and sliders, the amazing empanadas of Empanadas de Mendoza, Urban Poutine’s many forms of cheesy fries, Indian street food, gourmet tater tots, and more…  We switch up the food trucks a bit each year so our guests can try new things each time.  2020’s food truck selection will be posted soon!",
+          "All you care to enjoy at our large selection of food trucks is included in the ticket price. Past favorites have included Sloppy Mama’s BBQ sandwiches, Mama’s Donuts hot apple cider donuts, Crepe Love’s custom crepes, Peruvian Brothers ceviche and sliders, the amazing empanadas of Empanadas de Mendoza, Urban Poutine’s many forms of cheesy fries, Indian street food, gourmet tater tots, and more… Stay tuned for 2022’s food truck lineup!",
         ],
       },
       {
