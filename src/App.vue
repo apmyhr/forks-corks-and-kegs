@@ -478,14 +478,15 @@ export default {
         title: "Tickets",
         text: "Tickets",
         paragraphs: [
-          "Tickets can be purchased on the <a href='https://events.handbid.com/auctions/st-andrew-forks-corks-and-kegs-2020'>Handbid website</a> for $55 before May 24th, and $65 the week of the event. Each ticket includes all you can eat food at the food trucks, all you can drink beer and wine, and a tasting glass.",
+          "Tickets can be purchased on the <a href='https://events.handbid.com/auctions/st-andrew-forks-corks-and-kegs-2020'>Handbid website</a> for $60 before May 20th, and $70 the week of the event. Each ticket includes all you can eat food at the food trucks, all you can drink beer and wine, and a tasting glass.",
         ],
       },
       {
         icon: "mdi-gift-outline",
         text: "Sponsors",
         paragraphs: [
-          "Thank you to our generous sponsors in 2019!  Business Sponsors were Clawes Carpets, FH Furr, C&R Printing, ClickFXMarketing, and Supplyline Inc.  Our Family Sponsors were The Maestri Family and Duane & Andrew McCliggott.  If you are interested in being a sponsor for 2020, please <a href='mailto:crystalmac7@gmail.com'>contact us</a> for details.",
+          "​​Thank you to this year’s generous sponsors! Business Sponsors were",
+          "If you are interested in being a sponsor for 2023, please <a href='mailto:lofar9ex56@gmail.com'>contact us</a> for details",
         ],
         photos: [
           "/sponsors/MSB.png",
