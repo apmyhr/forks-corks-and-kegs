@@ -226,18 +226,39 @@
                   <div class="headline">Contact us</div>
                 </v-card-title>
                 <v-card-text
-                  >Please feel free to contact us through either of the
-                  following methods.</v-card-text
+                  >For the latest updates follow along on social media.</v-card-text
                 >
                 <v-list class="transparent">
-                  <!-- <v-list-item>
+                  <v-list-item @click="openUrl('https://www.instagram.com/standreweagles/')">
                     <v-list-item-action>
-                      <v-icon class="blue--text text--lighten-2">mdi-phone</v-icon>
+                      <v-icon class="red--text text--lighten-2"
+                        >mdi-instagram</v-icon
+                      >
                     </v-list-item-action>
                     <v-list-item-content>
-                      <v-list-item-title>(703) 817-1770</v-list-item-title>
+                      <v-list-item-title>@standreweagles</v-list-item-title>
                     </v-list-item-content>
-                  </v-list-item> -->
+                  </v-list-item>
+                  <v-list-item @click="openUrl('https://www.facebook.com/pages/St%20Andrew%20The%20Apostle%20School/750492388378856/')">
+                    <v-list-item-action>
+                      <v-icon class="blue--text text--lighten-2"
+                        >mdi-facebook</v-icon
+                      >
+                    </v-list-item-action>
+                    <v-list-item-content>
+                      <v-list-item-title>St Andrew The Apostle School</v-list-item-title>
+                    </v-list-item-content>
+                  </v-list-item>
+                  <v-list-item @click="openUrl('mailto:' + emailTo)">
+                    <v-list-item-action>
+                      <v-icon class="yellow--text text--lighten-2"
+                        >mdi-email</v-icon
+                      >
+                    </v-list-item-action>
+                    <v-list-item-content>
+                      <v-list-item-title>{{ emailTo }}</v-list-item-title>
+                    </v-list-item-content>
+                  </v-list-item>
                   <v-list-item
                     @click="
                       openUrl(
@@ -255,16 +276,6 @@
                         >6720B Union Mill Rd, Clifton, VA
                         20124</v-list-item-title
                       >
-                    </v-list-item-content>
-                  </v-list-item>
-                  <v-list-item @click="openUrl('mailto:' + emailTo)">
-                    <v-list-item-action>
-                      <v-icon class="blue--text text--lighten-2"
-                        >mdi-email</v-icon
-                      >
-                    </v-list-item-action>
-                    <v-list-item-content>
-                      <v-list-item-title>{{ emailTo }}</v-list-item-title>
                     </v-list-item-content>
                   </v-list-item>
                 </v-list>
