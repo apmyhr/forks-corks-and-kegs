@@ -58,9 +58,9 @@
 
     <v-main>
       <section dark>
-        <v-parallax src="@/assets/wine_cheese2.jpg" height="600">
+        <v-parallax src="@/assets/wine_cheese2.jpg" height="700">
           <v-layout column align-center justify-center class="white--text">
-            <span class="text-h1 ma-4 pt-4 text-center">{{ title }}</span>
+            <span class="text-lg-h1 text-h3 ma-4 pt-4 text-center">{{ title }}</span>
             <div class="text-subtitle-1 mb-4 text-center">{{ date }}</div>
             <img src="@/assets/logo.png" alt="Vuetify.js" height="300" />
             <v-btn
