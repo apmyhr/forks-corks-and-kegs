@@ -61,7 +61,7 @@
         <v-parallax src="@/assets/wine_cheese2.jpg" height="700">
           <v-layout column align-center justify-center class="white--text">
             <span class="text-lg-h1 text-h3 ma-4 pt-4 text-center">{{ title }}</span>
-            <div class="text-subtitle-1 mb-4 text-center">{{ date }}</div>
+            <div class="text-lg-h5 text-subtitle-2 mb-4 text-center">{{ date }}</div>
             <img src="@/assets/logo.png" alt="Vuetify.js" height="300" />
             <v-btn
               class="mt-12"
@@ -94,7 +94,7 @@
               <v-icon x-large class="blue--text text--lighten-2">{{
                 item.icon
               }}</v-icon>
-              <h2 class="headline">{{ item.text }}</h2>
+              <h2 class="text-lg-h4 headline">{{ item.text }}</h2>
               <!-- <span class="subheading">{{item.text}}</span> -->
             </div>
           </v-flex>
@@ -102,19 +102,12 @@
             <v-container grid-list-xl>
               <v-layout row wrap align-center>
                 <v-flex
-                  md4
-                  v-if="
-                    item.paragraphs.length == 1 && $vuetify.breakpoint.mdAndUp
-                  "
-                ></v-flex>
-                <v-flex
                   xs12
-                  md4
                   v-for="(paragraph, index) in item.paragraphs"
                   v-bind:key="index"
                 >
                   <v-card flat class="transparent">
-                    <v-card-text v-html="paragraph"></v-card-text>
+                    <v-card-text class="text-lg-h5" v-html="paragraph"></v-card-text>
                   </v-card>
                 </v-flex>
               </v-layout>
