@@ -586,7 +586,7 @@ export default {
         },
       },
       {
-        icon: "mdi-contact-mail",
+        icon: "mdi-email",
         text: "Contact Us",
         clickEvent: (myThis) => {
           window.open(
