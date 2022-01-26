@@ -458,6 +458,8 @@
 
 import auctionJson from "./auctionThanks.json";
 
+const HANDBID_WEBSITE = "https://events.handbid.com/auctions/forks-corks-and-kegs-2022";
+
 export default {
   name: "App",
 
@@ -502,7 +504,7 @@ export default {
         title: "Tickets",
         text: "Tickets",
         paragraphs: [
-          "Tickets can be purchased on the <a href='https://events.handbid.com/auctions/st-andrew-forks-corks-and-kegs-2020'>Handbid website</a> for $60 before May 20th, and $70 the week of the event. Each ticket includes all you can eat food at the food trucks, all you can drink beer and wine, and a tasting glass.",
+          `Tickets can be purchased on the <a href='${HANDBID_WEBSITE}'>Handbid website</a> for $60 before May 20th, and $70 the week of the event. Each ticket includes all you can eat food at the food trucks, all you can drink beer and wine, and a tasting glass.`,
         ],
       },
       {
@@ -525,7 +527,7 @@ export default {
         title: "Auction",
         text: "Auction",
         paragraphs: [
-          "The Forks, Corks & Kegs silent auction includes tropical vacation packages, Bethany Beach house vacations, Diamond Club Nationals tickets (sponsored by FH Furr), Capitals tickets, Virginia winery tasting tours, restaurant gift cards, summer camps, sports lessons, museum tickets, children’s birthday party packages, skiing, golf, theater tickets, and every sort of local activity from laser tag to zip lining that will make your family very happy.  Bidding will open at 6:00 am May 14th on our <a href='https://events.handbid.com/auctions/st-andrew-forks-corks-and-kegs-2020'>Handbid online auction</a> and close at 10:00 pm the night of May 21st.  All purchased items can be picked up at the event, or the following Monday in the school office.",
+          `The Forks, Corks & Kegs silent auction includes tropical vacation packages, Bethany Beach house vacations, Diamond Club Nationals tickets (sponsored by FH Furr), Capitals tickets, Virginia winery tasting tours, restaurant gift cards, summer camps, sports lessons, museum tickets, children’s birthday party packages, skiing, golf, theater tickets, and every sort of local activity from laser tag to zip lining that will make your family very happy.  Bidding will open at 6:00 am May 14th on our <a href='${HANDBID_WEBSITE}'>Handbid online auction</a> and close at 10:00 pm the night of May 21st.  All purchased items can be picked up at the event, or the following Monday in the school office.`,
         ],
       },
       {
@@ -625,8 +627,7 @@ export default {
     registrationLastName: "",
     // registrationEmail: "",
     registrationInterestedIn: [],
-    handbidWebsite:
-      "https://events.handbid.com/auctions/forks-corks-and-kegs-2022",
+    handbidWebsite: HANDBID_WEBSITE,
   }),
   computed: {
     auctionThanksJson() {
