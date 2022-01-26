@@ -606,7 +606,7 @@ export default {
     // registrationEmail: "",
     registrationInterestedIn: [],
     handbidWebsite:
-      "https://events.handbid.com/auctions/st-andrew-forks-corks-and-kegs-2020",
+      "https://events.handbid.com/auctions/forks-corks-and-kegs-2022",
   }),
   computed: {
     auctionThanksJson() {
