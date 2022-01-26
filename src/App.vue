@@ -60,8 +60,12 @@
       <section dark>
         <v-parallax src="@/assets/wine_cheese2.jpg" height="700">
           <v-layout column align-center justify-center class="white--text">
-            <span class="text-lg-h1 text-h3 ma-4 pt-4 text-center">{{ title }}</span>
-            <div class="text-lg-h5 text-subtitle-2 mb-4 text-center">{{ date }}</div>
+            <span class="text-lg-h1 text-h3 ma-4 pt-4 text-center">{{
+              title
+            }}</span>
+            <div class="text-lg-h5 text-subtitle-2 mb-4 text-center">
+              {{ date }}
+            </div>
             <img src="@/assets/logo.png" alt="Vuetify.js" height="300" />
             <v-btn
               class="mt-12"
@@ -107,7 +111,10 @@
                   v-bind:key="index"
                 >
                   <v-card flat class="transparent">
-                    <v-card-text class="text-lg-h5" v-html="paragraph"></v-card-text>
+                    <v-card-text
+                      class="text-lg-h5"
+                      v-html="paragraph"
+                    ></v-card-text>
                   </v-card>
                 </v-flex>
               </v-layout>
@@ -219,10 +226,15 @@
                   <div class="headline">Contact us</div>
                 </v-card-title>
                 <v-card-text
-                  >For the latest updates follow along on social media.</v-card-text
+                  >For the latest updates follow along on social
+                  media.</v-card-text
                 >
                 <v-list class="transparent">
-                  <v-list-item @click="openUrl('https://www.instagram.com/standreweagles/')">
+                  <v-list-item
+                    @click="
+                      openUrl('https://www.instagram.com/standreweagles/')
+                    "
+                  >
                     <v-list-item-action>
                       <v-icon class="red--text text--lighten-2"
                         >mdi-instagram</v-icon
@@ -232,14 +244,22 @@
                       <v-list-item-title>@standreweagles</v-list-item-title>
                     </v-list-item-content>
                   </v-list-item>
-                  <v-list-item @click="openUrl('https://www.facebook.com/pages/St%20Andrew%20The%20Apostle%20School/750492388378856/')">
+                  <v-list-item
+                    @click="
+                      openUrl(
+                        'https://www.facebook.com/pages/St%20Andrew%20The%20Apostle%20School/750492388378856/'
+                      )
+                    "
+                  >
                     <v-list-item-action>
                       <v-icon class="blue--text text--lighten-2"
                         >mdi-facebook</v-icon
                       >
                     </v-list-item-action>
                     <v-list-item-content>
-                      <v-list-item-title>St Andrew The Apostle School</v-list-item-title>
+                      <v-list-item-title
+                        >St Andrew The Apostle School</v-list-item-title
+                      >
                     </v-list-item-content>
                   </v-list-item>
                   <v-list-item @click="openUrl('mailto:' + emailTo)">
