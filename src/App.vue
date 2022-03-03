@@ -58,10 +58,14 @@
 
     <v-main>
       <section dark>
-        <v-parallax src="@/assets/wine_cheese2.jpg" height="600">
+        <v-parallax src="@/assets/wine_cheese2.jpg" height="700">
           <v-layout column align-center justify-center class="white--text">
-            <span class="text-h1 ma-4 pt-4 text-center">{{ title }}</span>
-            <div class="text-subtitle-1 mb-4 text-center">{{ date }}</div>
+            <span class="text-lg-h1 text-h3 ma-4 pt-4 text-center">{{
+              title
+            }}</span>
+            <div class="text-lg-h5 text-subtitle-2 mb-4 text-center">
+              {{ date }}
+            </div>
             <img src="@/assets/logo.png" alt="Vuetify.js" height="300" />
             <v-btn
               class="mt-12"
@@ -94,7 +98,7 @@
               <v-icon x-large class="blue--text text--lighten-2">{{
                 item.icon
               }}</v-icon>
-              <h2 class="headline">{{ item.text }}</h2>
+              <h2 class="text-lg-h4 headline">{{ item.text }}</h2>
               <!-- <span class="subheading">{{item.text}}</span> -->
             </div>
           </v-flex>
@@ -102,19 +106,15 @@
             <v-container grid-list-xl>
               <v-layout row wrap align-center>
                 <v-flex
-                  md4
-                  v-if="
-                    item.paragraphs.length == 1 && $vuetify.breakpoint.mdAndUp
-                  "
-                ></v-flex>
-                <v-flex
                   xs12
-                  md4
                   v-for="(paragraph, index) in item.paragraphs"
                   v-bind:key="index"
                 >
                   <v-card flat class="transparent">
-                    <v-card-text v-html="paragraph"></v-card-text>
+                    <v-card-text
+                      class="text-lg-h5"
+                      v-html="paragraph"
+                    ></v-card-text>
                   </v-card>
                 </v-flex>
               </v-layout>
@@ -226,10 +226,15 @@
                   <div class="headline">Contact us</div>
                 </v-card-title>
                 <v-card-text
-                  >For the latest updates follow along on social media.</v-card-text
+                  >For the latest updates follow along on social
+                  media.</v-card-text
                 >
                 <v-list class="transparent">
-                  <v-list-item @click="openUrl('https://www.instagram.com/standreweagles/')">
+                  <v-list-item
+                    @click="
+                      openUrl('https://www.instagram.com/standreweagles/')
+                    "
+                  >
                     <v-list-item-action>
                       <v-icon class="red--text text--lighten-2"
                         >mdi-instagram</v-icon
@@ -239,14 +244,22 @@
                       <v-list-item-title>@standreweagles</v-list-item-title>
                     </v-list-item-content>
                   </v-list-item>
-                  <v-list-item @click="openUrl('https://www.facebook.com/pages/St%20Andrew%20The%20Apostle%20School/750492388378856/')">
+                  <v-list-item
+                    @click="
+                      openUrl(
+                        'https://www.facebook.com/pages/St%20Andrew%20The%20Apostle%20School/750492388378856/'
+                      )
+                    "
+                  >
                     <v-list-item-action>
                       <v-icon class="blue--text text--lighten-2"
                         >mdi-facebook</v-icon
                       >
                     </v-list-item-action>
                     <v-list-item-content>
-                      <v-list-item-title>St Andrew The Apostle School</v-list-item-title>
+                      <v-list-item-title
+                        >St Andrew The Apostle School</v-list-item-title
+                      >
                     </v-list-item-content>
                   </v-list-item>
                   <v-list-item @click="openUrl('mailto:' + emailTo)">
@@ -391,7 +404,7 @@
 
     <v-dialog v-model="viewFlyerDialog">
       <embed
-        src="20-House-ForksCorksKegs-Flyer.pdf"
+        :src="pdfName"
         style="width: calc(100%); height: calc(100vh - 150px)"
       />
     </v-dialog>
@@ -445,6 +458,10 @@
 
 import auctionJson from "./auctionThanks.json";
 
+const HANDBID_WEBSITE =
+  "https://events.handbid.com/auctions/forks-corks-and-kegs-2022";
+const PDF_NAME = "ForksCorksKegs.pdf";
+
 export default {
   name: "App",
 
@@ -489,7 +506,7 @@ export default {
         title: "Tickets",
         text: "Tickets",
         paragraphs: [
-          "Tickets can be purchased on the <a href='https://events.handbid.com/auctions/st-andrew-forks-corks-and-kegs-2020'>Handbid website</a> for $60 before May 20th, and $70 the week of the event. Each ticket includes all you can eat food at the food trucks, all you can drink beer and wine, and a tasting glass.",
+          `Tickets can be purchased on the <a href='${HANDBID_WEBSITE}'>Handbid website</a> for $55 during Catholic Schools Week Special, Jan. 31 - Feb 6th, $65 before May 15th, and $75 the week of the event. Each ticket includes all you can eat food at the food trucks, all you can drink beer and wine, and a tasting glass.`,
         ],
       },
       {
@@ -497,7 +514,7 @@ export default {
         text: "Sponsors",
         paragraphs: [
           "​​Thank you to this year’s generous sponsors! Business Sponsors were",
-          "If you are interested in being a sponsor for 2023, please <a href='mailto:lofar9ex56@gmail.com'>contact us</a> for details",
+          "If you are interested in being a sponsor for 2022, please <a href='mailto:lofar9ex56@gmail.com'>contact us</a> for details",
         ],
         photos: [
           "/sponsors/MSB.png",
@@ -512,7 +529,7 @@ export default {
         title: "Auction",
         text: "Auction",
         paragraphs: [
-          "The Forks, Corks & Kegs silent auction includes tropical vacation packages, Bethany Beach house vacations, Diamond Club Nationals tickets (sponsored by FH Furr), Capitals tickets, Virginia winery tasting tours, restaurant gift cards, summer camps, sports lessons, museum tickets, children’s birthday party packages, skiing, golf, theater tickets, and every sort of local activity from laser tag to zip lining that will make your family very happy.  Bidding will open at 6:00 am May 14th on our <a href='https://events.handbid.com/auctions/st-andrew-forks-corks-and-kegs-2020'>Handbid online auction</a> and close at 10:00 pm the night of May 21st.  All purchased items can be picked up at the event, or the following Monday in the school office.",
+          `The Forks, Corks & Kegs silent auction includes tropical vacation packages, Bethany Beach house vacations, Diamond Club Nationals tickets (sponsored by FH Furr), Capitals tickets, Virginia winery tasting tours, restaurant gift cards, summer camps, sports lessons, museum tickets, children’s birthday party packages, skiing, golf, theater tickets, and every sort of local activity from laser tag to zip lining that will make your family very happy.  Bidding will open at 6:00 am May 14th on our <a href='${HANDBID_WEBSITE}'>Handbid online auction</a> and close at 10:00 pm the night of May 21st.  All purchased items can be picked up at the event, or the following Monday in the school office.`,
         ],
       },
       {
@@ -569,7 +586,7 @@ export default {
         },
       },
       {
-        icon: "mdi-contact-mail",
+        icon: "mdi-email",
         text: "Contact Us",
         clickEvent: (myThis) => {
           window.open(
@@ -612,8 +629,8 @@ export default {
     registrationLastName: "",
     // registrationEmail: "",
     registrationInterestedIn: [],
-    handbidWebsite:
-      "https://events.handbid.com/auctions/st-andrew-forks-corks-and-kegs-2020",
+    handbidWebsite: HANDBID_WEBSITE,
+    pdfName: PDF_NAME,
   }),
   computed: {
     auctionThanksJson() {
@@ -636,7 +653,7 @@ export default {
       });
     },
     openFlyer() {
-      window.open("20-House-ForksCorksKegs-Flyer.pdf", "_blank");
+      window.open(PDF_NAME, "_blank");
     },
     openUrl(URL) {
       window.open(URL, "_blank");
