@@ -170,24 +170,6 @@
             </v-col>
           </v-row>
         </v-container>
-        <!-- <v-layout row wrap align-center>
-          <v-flex v-for="(photo, index) in item.photos" :key="index" xs12 sm6 md4 pa-2>
-            <v-card flat tile class="d-flex">
-              <v-img
-                :src="photo"
-                aspect-ratio="1"
-                class="grey lighten-2"
-                @click="imageFullScreenPath = photo; imageFullScreen = true"
-              >
-                <template v-slot:placeholder>
-                  <v-row class="fill-height ma-0" align="center" justify="center">
-                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-                  </v-row>
-                </template>
-              </v-img>
-            </v-card>
-          </v-flex>
-        </v-layout>-->
       </section>
 
       <section>
@@ -389,7 +371,7 @@
         >
           <v-icon>mdi-close</v-icon>
         </v-btn>
-        <v-img :src="imageFullScreenPath" contain>
+        <v-img :src="imageFullScreenPath" class="image-full-screen" contain>
           <template v-slot:placeholder>
             <v-row class="fill-height ma-0" align="center" justify="center">
               <v-progress-circular
@@ -730,5 +712,13 @@ export default {
   color: white;
   text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
+}
+
+.image-full-screen {
+  max-width: 100%;
+  max-height: 80vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>
