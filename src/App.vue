@@ -147,7 +147,7 @@
               cols="4"
               @click="showPhoto(photo)"
             >
-              <v-card flat tile class="d-flex" color="transparent">
+              <v-card light flat tile class="d-flex">
                 <v-img
                   :src="photo"
                   aspect-ratio="1"
@@ -381,7 +381,7 @@
     </v-dialog>
 
     <v-dialog v-model="imageFullScreen">
-      <v-card>
+      <v-card light>
         <v-btn
           fab
           style="position: fixed; top: 50px; right: 50px; z-index: 100"
