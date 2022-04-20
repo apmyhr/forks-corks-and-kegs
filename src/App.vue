@@ -138,6 +138,11 @@
             </v-container>
           </v-flex>
         </v-layout>
+        <v-list v-if="item.sponsors" color="transparent" style="text-align: center;" class="mt-0 pt-0">
+          <v-list-item v-for="(sponsor, index) in item.sponsors" :key="index">
+            <v-list-item-title>{{sponsor}}</v-list-item-title>
+          </v-list-item>
+        </v-list>
         <v-container v-if="item.photos">
           <v-row>
             <v-col
@@ -495,8 +500,7 @@ export default {
         icon: "mdi-gift-outline",
         text: "Sponsors",
         paragraphs: [
-          "​​Thank you to this year’s generous sponsors! Business Sponsors were",
-          "If you are interested in being a sponsor for 2022, please <a href='mailto:lofar9ex56@gmail.com'>contact us</a> for details",
+          "​​Thank you to this year’s generous sponsors! If you are interested in being a sponsor for 2022, please <a href='mailto:lofar9ex56@gmail.com'>contact us</a> for details",
         ],
         photos: [
           "/sponsors2022/MSB.png",
@@ -511,6 +515,16 @@ export default {
           "/sponsors2022/old-bust-head.png",
           "/sponsors2022/chantilly-glow-logo.png",
         ],
+        sponsors: [
+          "MCKING Consulting",
+          "Egerthe LLC",
+          "Design Pro",
+          "Maestri Family",
+          "Premium Lawn and Landscape",
+          "The Maranian Family",
+          "VA Real Deals Team",
+          "Chantilly Academy Gymnastics and Preschool",
+        ]
         // photos: [
         //   "/sponsors/MSB.png",
         //   "/sponsors/thumbnail_Eavesdrop Logo (1).png",
