@@ -500,8 +500,8 @@ export default {
         ],
         photos: [
           "/sponsors2022/MSB.png",
-          "/sponsors2022/thumbnail_Eavesdrop Logo (1).png",
-          "/sponsors2022/thumbnail_Ono Logo 3-16-17.png",
+          "/sponsors2022/Eavesdrop.png",
+          "/sponsors2022/Ono.webp",
           "/sponsors2022/Tucked Away Logo 2.png",
           "/sponsors2022/PLL_Logo.png",
           "/sponsors2022/VaRealDealsPNG.png",
