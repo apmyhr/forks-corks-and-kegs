@@ -513,6 +513,12 @@ export default {
           "/sponsors2022/wine-logo-2.jpg",
           "/sponsors2022/old-bust-head.png",
           "/sponsors2022/chantilly-glow-logo.png",
+          "/sponsors2022/carahsoft.jpeg",
+          "/sponsors2022/socium_updated.png",
+          "/sponsors2022/thumbnail_McKing Logo.png",
+          "/sponsors2022/thumbnail_New Headshot.jpg",
+          "/sponsors2022/thumbnail_SRG Logo.jpg",
+          "/sponsors2022/c&r_logo.png",
         ],
         sponsors: [
           "MCKING Consulting",
