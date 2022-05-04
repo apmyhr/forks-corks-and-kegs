@@ -529,6 +529,10 @@ export default {
           "The Maranian Family",
           "VA Real Deals Team",
           "Chantilly Academy Gymnastics and Preschool",
+          "Carahsoft",
+          "Socium Advisors",
+          "Showcase Realty Group",
+          "C&R Printing"
         ]
         // photos: [
         //   "/sponsors/MSB.png",
