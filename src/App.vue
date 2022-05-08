@@ -565,6 +565,20 @@ export default {
         paragraphs: [
           "All you care to enjoy at our large selection of food trucks is included in the ticket price. Past favorites have included Sloppy Mama’s BBQ sandwiches, Mama’s Donuts hot apple cider donuts, Crepe Love’s custom crepes, Peruvian Brothers ceviche and sliders, the amazing empanadas of Empanadas de Mendoza, Urban Poutine’s many forms of cheesy fries, Indian street food, gourmet tater tots, and more… Stay tuned for 2022’s food truck lineup!",
         ],
+        photos: [
+          "/foodtrucks2022/uncle_freds_bbq.jpg",
+          "/foodtrucks2022/two_smooth_dudes.jpg",
+          "/foodtrucks2022/chutny_marys.jpeg",
+          "/foodtrucks2022/ChixNStix.png",
+          "/foodtrucks2022/mamasdonutsbites.jpg",
+        ],
+        sponsors: [
+          "Uncle Fred’s BBQ",
+          "Two Smooth Dudes",
+          "Chutney Mary’s",
+          "Chix N Stix",
+          "Mama’s Donuts",
+        ]
       },
       {
         icon: "mdi-camera",
