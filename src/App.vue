@@ -519,6 +519,7 @@ export default {
           "/sponsors2022/thumbnail_New Headshot.jpg",
           "/sponsors2022/thumbnail_SRG Logo.jpg",
           "/sponsors2022/c&r_logo.png",
+          "/sponsors2022/pbb-social-badge.png",
         ],
         sponsors: [
           "MCKING Consulting",
@@ -532,7 +533,8 @@ export default {
           "Carahsoft",
           "Socium Advisors",
           "Showcase Realty Group",
-          "C&R Printing"
+          "C&R Printing",
+          "Paris Baguette Centreville"
         ]
         // photos: [
         //   "/sponsors/MSB.png",
