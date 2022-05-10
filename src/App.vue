@@ -1,11 +1,6 @@
 <template>
   <v-app dark>
-    <v-app-bar
-      :clipped-left="$vuetify.breakpoint.lgAndUp"
-      app
-      color="blue darken-3"
-      dark
-    >
+    <v-app-bar :clipped-left="$vuetify.breakpoint.lgAndUp" app color="blue darken-3" dark>
       <v-toolbar-title>
         <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
         <span>{{ title }}</span>
@@ -16,20 +11,13 @@
       </v-btn>
     </v-app-bar>
 
-    <v-navigation-drawer
-      v-model="drawer"
-      :clipped="$vuetify.breakpoint.lgAndUp"
-      app
-    >
+    <v-navigation-drawer v-model="drawer" :clipped="$vuetify.breakpoint.lgAndUp" app>
       <v-list dense>
         <template v-for="item in items">
-          <v-list-item
-            :key="item.text"
-            @click="
-              $vuetify.goTo('#scroll-' + item.title, scrollOptions);
-              drawer = $vuetify.breakpoint.lgAndUp;
-            "
-          >
+          <v-list-item :key="item.text" @click="
+            $vuetify.goTo('#scroll-' + item.title, scrollOptions);
+          drawer = $vuetify.breakpoint.lgAndUp;
+          ">
             <v-list-item-action>
               <v-icon>{{ item.icon }}</v-icon>
             </v-list-item-action>
@@ -61,42 +49,24 @@
         <v-parallax src="@/assets/wine_cheese2.jpg" height="700">
           <v-layout column align-center justify-center class="white--text">
             <span class="text-lg-h1 text-h3 ma-4 pt-4 text-center">{{
-              title
+                title
             }}</span>
             <div class="text-lg-h5 text-subtitle-2 mb-4 text-center">
               {{ date }}
             </div>
             <img src="@/assets/logo.png" alt="Vuetify.js" height="300" />
-            <v-btn
-              class="mt-12"
-              color="blue lighten-2"
-              dark
-              large
-              @click="openUrl(handbidWebsite)"
-              >Register</v-btn
-            >
-            <v-btn
-              class="mt-12"
-              color="green lighten-2"
-              dark
-              large
-              @click="openFlyer"
-              >View the Flyer</v-btn
-            >
+            <v-btn class="mt-12" color="blue lighten-2" dark large @click="openUrl(handbidWebsite)">Register</v-btn>
+            <v-btn class="mt-12" color="green lighten-2" dark large @click="openFlyer">View the Flyer</v-btn>
           </v-layout>
         </v-parallax>
       </section>
 
-      <section
-        v-for="(item, index) in items"
-        v-bind:key="index"
-        :id="'scroll-' + item.title"
-      >
+      <section v-for="(item, index) in items" v-bind:key="index" :id="'scroll-' + item.title">
         <v-layout column wrap class="my-12" align-center>
           <v-flex xs12 sm4 class="my-4">
             <div class="text-center">
               <v-icon x-large class="blue--text text--lighten-2">{{
-                item.icon
+                  item.icon
               }}</v-icon>
               <h2 class="text-lg-h4 headline">{{ item.text }}</h2>
               <!-- <span class="subheading">{{item.text}}</span> -->
@@ -105,16 +75,9 @@
           <v-flex xs12>
             <v-container grid-list-xl>
               <v-layout row wrap align-center>
-                <v-flex
-                  xs12
-                  v-for="(paragraph, index) in item.paragraphs"
-                  v-bind:key="index"
-                >
+                <v-flex xs12 v-for="(paragraph, index) in item.paragraphs" v-bind:key="index">
                   <v-card flat class="transparent">
-                    <v-card-text
-                      class="text-lg-h5"
-                      v-html="paragraph"
-                    ></v-card-text>
+                    <v-card-text class="text-lg-h5" v-html="paragraph"></v-card-text>
                   </v-card>
                 </v-flex>
               </v-layout>
@@ -124,15 +87,8 @@
               </v-layout>
               <v-layout v-if="item.title == 'Auction'" row wrap align-center>
                 <v-flex xs12>
-                  <span class="subtitle-1 centerElement"
-                    >A Special Thank you to Our 2019 Auction Donors</span
-                  >
-                  <v-btn
-                    color="success"
-                    class="centerElement"
-                    @click="showAuctionThanks = true"
-                    >View Donors</v-btn
-                  >
+                  <span class="subtitle-1 centerElement">A Special Thank you to Our 2019 Auction Donors</span>
+                  <v-btn color="success" class="centerElement" @click="showAuctionThanks = true">View Donors</v-btn>
                 </v-flex>
               </v-layout>
             </v-container>
@@ -140,34 +96,18 @@
         </v-layout>
         <v-list v-if="item.sponsors" color="transparent" style="text-align: center;" class="mt-0 pt-0">
           <v-list-item v-for="(sponsor, index) in item.sponsors" :key="index">
-            <v-list-item-title class="text-lg-h4 headline">{{sponsor}}</v-list-item-title>
+            <v-list-item-title class="text-lg-h4 headline">{{ sponsor }}</v-list-item-title>
           </v-list-item>
         </v-list>
         <v-container v-if="item.photos">
           <v-row>
-            <v-col
-              v-for="(photo, index) in item.photos"
-              :key="index"
-              class="d-flex child-flex"
-              cols="4"
-              @click="showPhoto(photo)"
-            >
+            <v-col v-for="(photo, index) in item.photos" :key="index" class="d-flex child-flex" cols="4"
+              @click="showPhoto(photo)">
               <v-card light flat tile class="d-flex">
-                <v-img
-                  :src="photo"
-                  aspect-ratio="1"
-                  :contain="overrideContain(photo)"
-                >
+                <v-img :src="photo" aspect-ratio="1" :contain="overrideContain(photo)">
                   <template v-slot:placeholder>
-                    <v-row
-                      class="fill-height ma-0"
-                      align="center"
-                      justify="center"
-                    >
-                      <v-progress-circular
-                        indeterminate
-                        color="grey lighten-5"
-                      ></v-progress-circular>
+                    <v-row class="fill-height ma-0" align="center" justify="center">
+                      <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
                     </v-row>
                   </template>
                 </v-img>
@@ -184,14 +124,7 @@
               {{ "Unlimited Food & Drinks" }}
             </div>
             <em class="outlinedPictureText">Register today!</em>
-            <v-btn
-              class="mt-12"
-              color="blue lighten-2"
-              dark
-              large
-              @click="openUrl(handbidWebsite)"
-              >Register</v-btn
-            >
+            <v-btn class="mt-12" color="blue lighten-2" dark large @click="openUrl(handbidWebsite)">Register</v-btn>
           </v-layout>
         </v-parallax>
       </section>
@@ -212,70 +145,50 @@
                 <v-card-title primary-title class="layout justify-center">
                   <div class="headline">Contact us</div>
                 </v-card-title>
-                <v-card-text
-                  >For the latest updates follow along on social
-                  media.</v-card-text
-                >
+                <v-card-text>For the latest updates follow along on social
+                  media.</v-card-text>
                 <v-list class="transparent">
-                  <v-list-item
-                    @click="
-                      openUrl('https://www.instagram.com/standreweagles/')
-                    "
-                  >
+                  <v-list-item @click="
+                    openUrl('https://www.instagram.com/standreweagles/')
+                  ">
                     <v-list-item-action>
-                      <v-icon class="red--text text--lighten-2"
-                        >mdi-instagram</v-icon
-                      >
+                      <v-icon class="red--text text--lighten-2">mdi-instagram</v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
                       <v-list-item-title>@standreweagles</v-list-item-title>
                     </v-list-item-content>
                   </v-list-item>
-                  <v-list-item
-                    @click="
-                      openUrl(
-                        'https://www.facebook.com/pages/St%20Andrew%20The%20Apostle%20School/750492388378856/'
-                      )
-                    "
-                  >
+                  <v-list-item @click="
+                    openUrl(
+                      'https://www.facebook.com/pages/St%20Andrew%20The%20Apostle%20School/750492388378856/'
+                    )
+                  ">
                     <v-list-item-action>
-                      <v-icon class="blue--text text--lighten-2"
-                        >mdi-facebook</v-icon
-                      >
+                      <v-icon class="blue--text text--lighten-2">mdi-facebook</v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
-                      <v-list-item-title
-                        >St Andrew The Apostle School</v-list-item-title
-                      >
+                      <v-list-item-title>St Andrew The Apostle School</v-list-item-title>
                     </v-list-item-content>
                   </v-list-item>
                   <v-list-item @click="openUrl('mailto:' + emailTo)">
                     <v-list-item-action>
-                      <v-icon class="yellow--text text--lighten-2"
-                        >mdi-email</v-icon
-                      >
+                      <v-icon class="yellow--text text--lighten-2">mdi-email</v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
                       <v-list-item-title>{{ emailTo }}</v-list-item-title>
                     </v-list-item-content>
                   </v-list-item>
-                  <v-list-item
-                    @click="
-                      openUrl(
-                        'https://www.google.com/maps/place/6720+Union+Mill+Rd,+Clifton,+VA+20124'
-                      )
-                    "
-                  >
+                  <v-list-item @click="
+                    openUrl(
+                      'https://www.google.com/maps/place/6720+Union+Mill+Rd,+Clifton,+VA+20124'
+                    )
+                  ">
                     <v-list-item-action>
-                      <v-icon class="blue--text text--lighten-2"
-                        >mdi-map-marker</v-icon
-                      >
+                      <v-icon class="blue--text text--lighten-2">mdi-map-marker</v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
-                      <v-list-item-title
-                        >6720B Union Mill Rd, Clifton, VA
-                        20124</v-list-item-title
-                      >
+                      <v-list-item-title>6720B Union Mill Rd, Clifton, VA
+                        20124</v-list-item-title>
                     </v-list-item-content>
                   </v-list-item>
                 </v-list>
@@ -291,9 +204,7 @@
         <div class="white--text ml-4">-->
         <v-icon class="red--text">mdi-glass-wine</v-icon>
         <v-spacer></v-spacer>
-        <a class="white--text" href="http://www.st-andrew.org/" target="_blank"
-          >St. Andrew the Apostle</a
-        >
+        <a class="white--text" href="http://www.st-andrew.org/" target="_blank">St. Andrew the Apostle</a>
         <v-spacer></v-spacer>
         <v-icon class="amber--text">mdi-beer</v-icon>
         <!-- </div>
@@ -310,40 +221,24 @@
           <v-container>
             <v-row>
               <v-col cols="12" sm="6" md="4">
-                <v-text-field
-                  v-model="registrationFirstName"
-                  label="First name*"
-                  required
-                ></v-text-field>
+                <v-text-field v-model="registrationFirstName" label="First name*" required></v-text-field>
               </v-col>
               <v-col cols="12" sm="6" md="4">
-                <v-text-field
-                  v-model="registrationMiddleName"
-                  label="Middle name"
-                ></v-text-field>
+                <v-text-field v-model="registrationMiddleName" label="Middle name"></v-text-field>
               </v-col>
               <v-col cols="12" sm="6" md="4">
-                <v-text-field
-                  v-model="registrationLastName"
-                  label="Last name*"
-                  required
-                ></v-text-field>
+                <v-text-field v-model="registrationLastName" label="Last name*" required></v-text-field>
               </v-col>
               <!-- <v-col cols="12">
                 <v-text-field v-model="registrationEmail" label="Email*" required hint="Please enter a valid email address"></v-text-field>
               </v-col> -->
               <v-col cols="12">
-                <v-autocomplete
-                  v-model="registrationInterestedIn"
-                  :items="[
-                    'Tickets',
-                    'Donating to Auction',
-                    'Sponsoring',
-                    'Volunteering',
-                  ]"
-                  label="Interested in"
-                  multiple
-                ></v-autocomplete>
+                <v-autocomplete v-model="registrationInterestedIn" :items="[
+                  'Tickets',
+                  'Donating to Auction',
+                  'Sponsoring',
+                  'Volunteering',
+                ]" label="Interested in" multiple></v-autocomplete>
               </v-col>
             </v-row>
           </v-container>
@@ -351,38 +246,24 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="blue darken-1" text @click="registerDialog = false"
-            >Close</v-btn
-          >
-          <v-btn
-            color="blue darken-1"
-            text
-            @click="
-              registerDialog = false;
-              submitRegistration();
-            "
-            >Submit</v-btn
-          >
+          <v-btn color="blue darken-1" text @click="registerDialog = false">Close</v-btn>
+          <v-btn color="blue darken-1" text @click="
+            registerDialog = false;
+          submitRegistration();
+          ">Submit</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
 
     <v-dialog v-model="imageFullScreen">
       <v-card light>
-        <v-btn
-          fab
-          style="position: fixed; top: 50px; right: 50px; z-index: 100"
-          @click="imageFullScreen = false"
-        >
+        <v-btn fab style="position: fixed; top: 50px; right: 50px; z-index: 100" @click="imageFullScreen = false">
           <v-icon>mdi-close</v-icon>
         </v-btn>
         <v-img :src="imageFullScreenPath" class="image-full-screen" contain>
           <template v-slot:placeholder>
             <v-row class="fill-height ma-0" align="center" justify="center">
-              <v-progress-circular
-                indeterminate
-                color="grey lighten-5"
-              ></v-progress-circular>
+              <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
             </v-row>
           </template>
         </v-img>
@@ -390,19 +271,12 @@
     </v-dialog>
 
     <v-dialog v-model="viewFlyerDialog">
-      <embed
-        :src="pdfName"
-        style="width: calc(100%); height: calc(100vh - 150px)"
-      />
+      <embed :src="pdfName" style="width: calc(100%); height: calc(100vh - 150px)" />
     </v-dialog>
     <v-dialog v-model="showAuctionThanks" width="450">
       <v-card dark>
         <v-list>
-          <v-list-item
-            v-for="(item, index) in auctionThanksJson"
-            v-bind:key="index"
-            @click="openUrl(item.url)"
-          >
+          <v-list-item v-for="(item, index) in auctionThanksJson" v-bind:key="index" @click="openUrl(item.url)">
             <v-list-item-icon>
               <v-icon color="yellow">mdi-star</v-icon>
             </v-list-item-icon>
@@ -412,7 +286,9 @@
             </v-list-item-content>
 
             <v-list-item-avatar>
-              <v-btn icon color="info"><v-icon>mdi-web</v-icon></v-btn>
+              <v-btn icon color="info">
+                <v-icon>mdi-web</v-icon>
+              </v-btn>
             </v-list-item-avatar>
             <!-- <v-list-item-icon>
               <v-icon>mdi-star</v-icon>
@@ -558,8 +434,7 @@ export default {
         title: "BeerWine",
         text: "Beer & Wine",
         paragraphs: [
-          "Past breweries that have sponsored Forks, Corks & Kegs include Old Bust Head Brewery, Tucked Away Brewing Co, Ono Brewing Co, Mustang Sally Brewery, Solace Brewing Co, Eavesdrop Brewing Co, Growling Bear Brewery, Heritage Brewery, and Bad Wolf Brewing. Each brewery brings a selection of four different beers for our guests to enjoy. A table of Virginia wines is also included in the ticket with over 50 wines to sample. This year’s wine table will be sponsored by TBD.",
-        ],
+          "Breweries that are sponsoring Forks, Corks & Kegs include Old Bust Head Brewery, Tucked Away Brewing Co, Ono Brewing Co, Mustang Sally Brewery, and Eavesdrop Brewing Co. Each brewery brings a selection of four different beers for our guests to enjoy. A table of Virginia wines is also included in the ticket with over 50 wines to sample. This year’s wine table will be sponsored by Rappahannock Cellars.",],
       },
       {
         icon: "mdi-food",
@@ -610,13 +485,13 @@ export default {
         clickEvent: (myThis) => {
           window.open(
             "mailto:" +
-              myThis.emailTo +
-              "?cc=" +
-              myThis.emailCC +
-              "&subject=" +
-              myThis.feedbackEmailSub +
-              "&body=" +
-              myThis.feedbackEmailBody
+            myThis.emailTo +
+            "?cc=" +
+            myThis.emailCC +
+            "&subject=" +
+            myThis.feedbackEmailSub +
+            "&body=" +
+            myThis.feedbackEmailBody
           );
         },
       },
@@ -626,13 +501,13 @@ export default {
         clickEvent: (myThis) => {
           window.open(
             "mailto:" +
-              myThis.emailTo +
-              "?cc=" +
-              myThis.emailCC +
-              "&subject=" +
-              myThis.contactEmailSub +
-              "&body=" +
-              myThis.contactEmailBody
+            myThis.emailTo +
+            "?cc=" +
+            myThis.emailCC +
+            "&subject=" +
+            myThis.contactEmailSub +
+            "&body=" +
+            myThis.contactEmailBody
           );
         },
       },
@@ -726,13 +601,13 @@ export default {
 
       window.open(
         "mailto:" +
-          this.emailTo +
-          "?cc=" +
-          this.emailCC +
-          "&subject=" +
-          subject +
-          "&body=" +
-          body
+        this.emailTo +
+        "?cc=" +
+        this.emailCC +
+        "&subject=" +
+        subject +
+        "&body=" +
+        body
       );
     },
   },
