@@ -523,7 +523,6 @@ export default {
         ],
         sponsors: [
           "MCKING Consulting",
-          "Egerthe LLC",
           "Design Pro",
           "Maestri Family",
           "Premium Lawn and Landscape",
