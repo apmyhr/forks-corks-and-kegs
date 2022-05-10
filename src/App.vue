@@ -520,6 +520,7 @@ export default {
           "/sponsors2022/thumbnail_SRG Logo.jpg",
           "/sponsors2022/c&r_logo.png",
           "/sponsors2022/pbb-social-badge.png",
+          "/sponsors2022/threaces.webp",
         ],
         sponsors: [
           "MCKING Consulting",
@@ -533,7 +534,8 @@ export default {
           "Socium Advisors",
           "Showcase Realty Group",
           "C&R Printing",
-          "Paris Baguette Centreville"
+          "Paris Baguette Centreville",
+          "3 Aces Home Healthcare",
         ]
         // photos: [
         //   "/sponsors/MSB.png",
