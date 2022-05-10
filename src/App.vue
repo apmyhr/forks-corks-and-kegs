@@ -434,7 +434,7 @@ export default {
         title: "BeerWine",
         text: "Beer & Wine",
         paragraphs: [
-          "Breweries that are sponsoring Forks, Corks & Kegs include Old Bust Head Brewery, Tucked Away Brewing Co, Ono Brewing Co, Mustang Sally Brewery, and Eavesdrop Brewing Co. Each brewery brings a selection of four different beers for our guests to enjoy. A table of Virginia wines is also included in the ticket with over 50 wines to sample. This year’s wine table will be sponsored by Rappahannock Cellars.",],
+          "Your ticket includes unlimited samplings of all beer and wine selections.  Breweries sponsoring our event include Old Bust Head Brewery, Tucked Away Brewing Co, Ono Brewing Co, Mustang Sally Brewery, and Eavesdrop Brewing Co. Each brewery offers a contrasting selection of its best brews. We also feature a wide-ranging variety of Virginia wines, all sponsored by Rappahannock Cellars.",],
       },
       {
         icon: "mdi-food",
