@@ -397,6 +397,7 @@ export default {
           "/sponsors2022/c&r_logo.png",
           "/sponsors2022/pbb-social-badge.png",
           "/sponsors2022/threaces.webp",
+          "/sponsors2022/burke_centre_pet_sitting.jpg",
         ],
         sponsors: [
           "MCKING Consulting",
@@ -412,6 +413,7 @@ export default {
           "C&R Printing",
           "Paris Baguette Centreville",
           "3 Aces Home Healthcare",
+          "Burke Centre Pet Sitting",
         ]
         // photos: [
         //   "/sponsors/MSB.png",
