@@ -323,7 +323,7 @@ import auctionJson from "./auctionThanks.json";
 
 const HANDBID_WEBSITE =
   "https://events.handbid.com/auctions/forks-corks-and-kegs-2022";
-const PDF_NAME = "ForksCorksKegs.pdf";
+const PDF_NAME = "2023-ForksCorksKegs-Flyer.pdf";
 
 export default {
   name: "App",
@@ -350,7 +350,7 @@ export default {
     imageFullScreenPath: "",
     registerDialog: false,
     title: "Forks, Corks, & Kegs",
-    date: "Saturday, May 21st 2022 at 6:00 PM",
+    date: "Saturday, May 20th 2023 at 6:00 PM",
     drawer: null,
     items: [
       {
@@ -358,7 +358,7 @@ export default {
         title: "Home",
         text: "Home",
         paragraphs: [
-          "St. Andrew the Apostle School PTO will be hosting the fourth annual Forks,Corks, & Kegs on Saturday, May 21, 2022",
+          "St. Andrew the Apostle School PTO will be hosting the fourth annual Forks,Corks, & Kegs on Saturday, May 20, 2023",
           "This exciting tasting festival in Clifton, Virginia will include local breweries, wineries, and food trucks, a live band, as well as a silent auction and raffles. Your ticket includes all-you-can-eat and drink, plus a tasting glass.",
           "Past silent auctions have included local beach house vacations, tropical resort vacations, prime seats to a Washington Capitals game, Washington Nationals Diamond Club tickets, Virginia winery tours and more!",
           "All proceeds from Forks, Corks, & Kegs go to the St Andrew’s School PTO to help support our talented students. Past PTO funds have been used to purchase a new preschool playground, Robotics Club, ActiveBoards, Science Lab curriculum, textbooks, a new school website, field trips, school assemblies, and an iPad library for classroom use.",
@@ -376,7 +376,7 @@ export default {
         icon: "mdi-gift-outline",
         text: "Sponsors",
         paragraphs: [
-          "​​Thank you to this year’s generous sponsors! If you are interested in being a sponsor for 2022, please <a href='mailto:lofar9ex56@gmail.com'>contact us</a> for details",
+          "​​Thank you to this year’s generous sponsors! If you are interested in being a sponsor for 2023, please <a href='mailto:lofar9ex56@gmail.com'>contact us</a> for details",
         ],
         photos: [
           "/sponsors2022/MSB.png",
@@ -428,7 +428,7 @@ export default {
         title: "Auction",
         text: "Auction",
         paragraphs: [
-          `The Forks, Corks & Kegs silent auction includes tropical vacation packages, Bethany Beach house vacations, Diamond Club Nationals tickets (sponsored by FH Furr), Capitals tickets, Virginia winery tasting tours, restaurant gift cards, summer camps, sports lessons, museum tickets, children’s birthday party packages, skiing, golf, theater tickets, and every sort of local activity from laser tag to zip lining that will make your family very happy.  Bidding will open at 6:00 am May 14th on our <a href='${HANDBID_WEBSITE}'>Handbid online auction</a> and close at 10:00 pm the night of May 21st.  All purchased items can be picked up at the event, or the following Monday in the school office.`,
+          `The Forks, Corks & Kegs silent auction includes tropical vacation packages, Bethany Beach house vacations, Diamond Club Nationals tickets (sponsored by FH Furr), Capitals tickets, Virginia winery tasting tours, restaurant gift cards, summer camps, sports lessons, museum tickets, children’s birthday party packages, skiing, golf, theater tickets, and every sort of local activity from laser tag to zip lining that will make your family very happy.  Bidding will open at 6:00 am May 14th on our <a href='${HANDBID_WEBSITE}'>Handbid online auction</a> and close at 10:00 pm the night of May 20th.  All purchased items can be picked up at the event, or the following Monday in the school office.`,
         ],
       },
       {
@@ -443,7 +443,7 @@ export default {
         title: "FoodTrucks",
         text: "Food Trucks",
         paragraphs: [
-          "All you care to enjoy at our large selection of food trucks is included in the ticket price. Below is our 2022 food truck lineup!",
+          "All you care to enjoy at our large selection of food trucks is included in the ticket price. Below is our 2023 food truck lineup!",
         ],
         photos: [
           "/foodtrucks2022/uncle_freds_bbq.jpg",
