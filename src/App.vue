@@ -376,7 +376,7 @@ export default {
         icon: "mdi-gift-outline",
         text: "Sponsors",
         paragraphs: [
-          "​​Thank you to this year’s generous sponsors! If you are interested in being a sponsor for 2023, please <a href='mailto:lofar9ex56@gmail.com'>contact us</a> for details",
+          "​​Thank you to last year’s generous sponsors!  Our list of sponsors for this year is coming soon. If you are interested in being a sponsor for 2023, please <a href='mailto:lofar9ex56@gmail.com'>contact us</a> for details",
         ],
         photos: [
           "/sponsors2022/MSB.png",
