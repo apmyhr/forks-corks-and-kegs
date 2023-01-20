@@ -322,7 +322,7 @@
 import auctionJson from "./auctionThanks.json";
 
 const HANDBID_WEBSITE =
-  "https://events.handbid.com/auctions/forks-corks-and-kegs-2022";
+  "https://events.handbid.com/auctions/forks-corks-and-kegs-2023";
 const PDF_NAME = "2023-ForksCorksKegs-Flyer.pdf";
 
 export default {
@@ -369,7 +369,7 @@ export default {
         title: "Tickets",
         text: "Tickets",
         paragraphs: [
-          `Tickets can be purchased on the Handbid website (link coming soon) for $55 during Catholic Schools Week Special, Jan. 30th - Feb 5th, $65 before May 15th, and $75 the week of the event. Each ticket includes all you can eat food at the food trucks, all you can drink beer and wine, and a tasting glass.`,
+          `Tickets can be purchased on the <a href='${HANDBID_WEBSITE}'>Handbid website</a> for $55 during Catholic Schools Week Special, Jan. 30th - Feb 5th, $65 before May 15th, and $75 the week of the event. Each ticket includes all you can eat food at the food trucks, all you can drink beer and wine, and a tasting glass.`,
         ],
       },
       {
