@@ -103,38 +103,12 @@
             }}</v-list-item-title>
           </v-list-item>
         </v-list>
-        <v-container v-if="item.photos">
-          <v-row>
-            <v-col
-              v-for="(photo, index) in item.photos"
-              :key="index"
-              class="d-flex child-flex"
-              cols="4"
-              @click="showPhoto(photo)"
-            >
-              <v-card light flat tile class="d-flex">
-                <v-img
-                  :src="photo"
-                  aspect-ratio="1"
-                  :contain="overrideContain(photo)"
-                >
-                  <template v-slot:placeholder>
-                    <v-row
-                      class="fill-height ma-0"
-                      align="center"
-                      justify="center"
-                    >
-                      <v-progress-circular
-                        indeterminate
-                        color="grey lighten-5"
-                      ></v-progress-circular>
-                    </v-row>
-                  </template>
-                </v-img>
-              </v-card>
-            </v-col>
-          </v-row>
-        </v-container>
+
+        <PhotosGrid
+          v-if="item.photos"
+          :photos="item.photos"
+          @show-photo="showPhoto"
+        />
       </section>
 
       <section>
@@ -283,6 +257,7 @@ import Navigation from "./components/Navigation.vue";
 import Auction from "./components/dialogs/Auction.vue";
 import ImageEnlarge from "./components/dialogs/ImageEnlarge.vue";
 import Register from "./components/dialogs/Register.vue";
+import PhotosGrid from "./components/PhotosGrid.vue";
 
 const HANDBID_WEBSITE =
   "https://events.handbid.com/auctions/forks-corks-and-kegs-2023";
@@ -297,6 +272,7 @@ export default {
     Auction,
     ImageEnlarge,
     Register,
+    PhotosGrid,
   },
 
   created() {
@@ -462,10 +438,6 @@ export default {
     },
     setDrawer(val) {
       this.drawer = val;
-    },
-    overrideContain(photo) {
-      //Need to use Contain on this one photo because it shows "UCKED"
-      return photo.indexOf("Tucked Away Logo") != -1;
     },
     showPhoto(photo) {
       this.imageFullScreen = true;
