@@ -69,7 +69,6 @@
                   item.icon
               }}</v-icon>
               <h2 class="text-lg-h4 headline">{{ item.text }}</h2>
-              <!-- <span class="subheading">{{item.text}}</span> -->
             </div>
           </v-flex>
           <v-flex xs12>
@@ -290,12 +289,6 @@
                 <v-icon>mdi-web</v-icon>
               </v-btn>
             </v-list-item-avatar>
-            <!-- <v-list-item-icon>
-              <v-icon>mdi-star</v-icon>
-            </v-list-item-icon>
-            <v-list-item-content>
-              <v-list-item-title v-text="item.title"></v-list-item-title>
-            </v-list-item-content> -->
           </v-list-item>
         </v-list>
       </v-card>
@@ -304,21 +297,6 @@
 </template>
 
 <script>
-//import HelloWorld from './components/HelloWorld';
-
-// import { LoremIpsum } from "lorem-ipsum";
-
-// const lorem = new LoremIpsum({
-//   sentencesPerParagraph: {
-//     max: 12,
-//     min: 6
-//   },
-//   wordsPerSentence: {
-//     max: 24,
-//     min: 6
-//   }
-// });
-
 import auctionJson from "./auctionThanks.json";
 
 const HANDBID_WEBSITE =
