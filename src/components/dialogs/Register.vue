@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="showDialog" max-width="600px">
+  <v-dialog v-model="localShow" max-width="600px">
     <v-card>
       <v-card-title>
         <span class="headline">Register</span>
@@ -46,14 +46,14 @@
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="blue darken-1" text @click="showDialog = false"
+        <v-btn color="blue darken-1" text @click="localShow = false"
           >Close</v-btn
         >
         <v-btn
           color="blue darken-1"
           text
           @click="
-            showDialog = false;
+            localShow = false;
             submitRegistration;
           "
           >Submit</v-btn

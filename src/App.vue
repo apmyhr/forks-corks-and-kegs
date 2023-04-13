@@ -264,68 +264,24 @@
 
     <Register :showDialog.sync="registerDialog" />
 
-    <v-dialog v-model="imageFullScreen">
-      <v-card light>
-        <v-btn
-          fab
-          style="position: fixed; top: 50px; right: 50px; z-index: 100"
-          @click="imageFullScreen = false"
-        >
-          <v-icon>mdi-close</v-icon>
-        </v-btn>
-        <v-img :src="imageFullScreenPath" class="image-full-screen" contain>
-          <template v-slot:placeholder>
-            <v-row class="fill-height ma-0" align="center" justify="center">
-              <v-progress-circular
-                indeterminate
-                color="grey lighten-5"
-              ></v-progress-circular>
-            </v-row>
-          </template>
-        </v-img>
-      </v-card>
-    </v-dialog>
+    <ImageEnlarge
+      :showDialog.sync="imageFullScreen"
+      :imageFullScreenPath="imageFullScreenPath"
+    />
 
-    <v-dialog v-model="viewFlyerDialog">
-      <embed
-        :src="pdfName"
-        style="width: calc(100%); height: calc(100vh - 150px)"
-      />
-    </v-dialog>
-    <v-dialog v-model="showAuctionThanks" width="450">
-      <v-card dark>
-        <v-list>
-          <v-list-item
-            v-for="(item, index) in auctionThanksJson"
-            v-bind:key="index"
-            @click="openUrl(item.url)"
-          >
-            <v-list-item-icon>
-              <v-icon color="yellow">mdi-star</v-icon>
-            </v-list-item-icon>
-
-            <v-list-item-content>
-              <v-list-item-title v-text="item.title"></v-list-item-title>
-            </v-list-item-content>
-
-            <v-list-item-avatar>
-              <v-btn icon color="info">
-                <v-icon>mdi-web</v-icon>
-              </v-btn>
-            </v-list-item-avatar>
-          </v-list-item>
-        </v-list>
-      </v-card>
-    </v-dialog>
+    <Auction
+      :showDialog.sync="showAuctionThanks"
+      :imageFullScreenPath="imageFullScreenPath"
+    />
   </v-app>
 </template>
 
 <script>
-import auctionJson from "./auctionThanks.json";
-
 //Components
 import TopBar from "./components/TopBar.vue";
 import Navigation from "./components/Navigation.vue";
+import Auction from "./components/dialogs/Auction.vue";
+import ImageEnlarge from "./components/dialogs/ImageEnlarge.vue";
 import Register from "./components/dialogs/Register.vue";
 
 const HANDBID_WEBSITE =
@@ -338,6 +294,8 @@ export default {
   components: {
     TopBar,
     Navigation,
+    Auction,
+    ImageEnlarge,
     Register,
   },
 
@@ -354,7 +312,6 @@ export default {
 
   data: () => ({
     showAuctionThanks: false,
-    viewFlyerDialog: false,
     imageFullScreen: false,
     imageFullScreenPath: "",
     registerDialog: false,
@@ -498,15 +455,7 @@ export default {
     handbidWebsite: HANDBID_WEBSITE,
     pdfName: PDF_NAME,
   }),
-  computed: {
-    auctionThanksJson() {
-      if (auctionJson) {
-        return auctionJson;
-      } else {
-        return [];
-      }
-    },
-  },
+  computed: {},
   methods: {
     toggleDrawer() {
       this.drawer = !this.drawer;
