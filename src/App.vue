@@ -379,6 +379,7 @@ export default {
           "​​Thank you to last year’s generous sponsors!  Our list of sponsors for this year is coming soon. If you are interested in being a sponsor for 2023, please <a href='mailto:lofar9ex56@gmail.com'>contact us</a> for details",
         ],
         photos: [
+          "/sponsors2022/TheFruitfulForest.png",
           "/sponsors2022/MSB.png",
           "/sponsors2022/Eavesdrop.png",
           "/sponsors2022/Ono.webp",
@@ -400,6 +401,7 @@ export default {
           "/sponsors2022/burke_centre_pet_sitting.jpg",
         ],
         sponsors: [
+          "The Fruitful Forest",
           "MCKING Consulting",
           "Design Pro",
           "Maestri Family",
@@ -415,13 +417,6 @@ export default {
           "3 Aces Home Healthcare",
           "Burke Centre Pet Sitting",
         ]
-        // photos: [
-        //   "/sponsors/MSB.png",
-        //   "/sponsors/thumbnail_Eavesdrop Logo (1).png",
-        //   "/sponsors/thumbnail_Ono Logo 3-16-17.png",
-        //   "/sponsors/thumbnail_solace-website-logo-e433006c5056a36_e43303d3-5056-a36a-07f76b181f2374be-Quick Preset_800x600.jpg",
-        //   "/sponsors/Tucked Away Logo 2.png",
-        // ],
       },
       {
         icon: "mdi-gavel",
