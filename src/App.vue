@@ -1,72 +1,56 @@
 <template>
   <v-app dark>
-    <v-app-bar :clipped-left="$vuetify.breakpoint.lgAndUp" app color="blue darken-3" dark>
-      <v-toolbar-title>
-        <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-        <span>{{ title }}</span>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn text icon @click="toggleTheme">
-        <v-icon>mdi-invert-colors</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-navigation-drawer v-model="drawer" :clipped="$vuetify.breakpoint.lgAndUp" app>
-      <v-list dense>
-        <template v-for="item in items">
-          <v-list-item :key="item.text" @click="
-            $vuetify.goTo('#scroll-' + item.title, scrollOptions);
-          drawer = $vuetify.breakpoint.lgAndUp;
-          ">
-            <v-list-item-action>
-              <v-icon>{{ item.icon }}</v-icon>
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title>{{ item.text }}</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </template>
-      </v-list>
-      <template v-slot:append>
-        <v-divider></v-divider>
-        <v-list dense>
-          <template v-for="item in itemsFooter">
-            <v-list-item :key="item.text" @click="item.clickEvent(getMyThis())">
-              <v-list-item-action>
-                <v-icon>{{ item.icon }}</v-icon>
-              </v-list-item-action>
-              <v-list-item-content>
-                <v-list-item-title>{{ item.text }}</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-          </template>
-        </v-list>
-      </template>
-    </v-navigation-drawer>
+    <TopBar @toggle-drawer="toggleDrawer" />
+    <Navigation
+      :drawer="drawer"
+      :items="items"
+      @set-drawer="setDrawer"
+      @send-feedback="sendFeedback"
+      @contact-us="contactUs"
+      @register="register"
+    />
 
     <v-main>
       <section dark>
         <v-parallax src="@/assets/wine_cheese2.jpg" height="700">
           <v-layout column align-center justify-center class="white--text">
             <span class="text-lg-h1 text-h3 ma-4 pt-4 text-center">{{
-                title
+              title
             }}</span>
             <div class="text-lg-h5 text-subtitle-2 mb-4 text-center">
               {{ date }}
             </div>
             <img src="@/assets/logo.png" alt="Vuetify.js" height="300" />
-            <v-btn class="mt-12" color="blue lighten-2" dark large @click="openUrl(handbidWebsite)">Register</v-btn>
-            <v-btn class="mt-12" color="green lighten-2" dark large @click="openFlyer">View the Flyer</v-btn>
+            <v-btn
+              class="mt-12"
+              color="blue lighten-2"
+              dark
+              large
+              @click="openUrl(handbidWebsite)"
+              >Register</v-btn
+            >
+            <v-btn
+              class="mt-12"
+              color="green lighten-2"
+              dark
+              large
+              @click="openFlyer"
+              >View the Flyer</v-btn
+            >
           </v-layout>
         </v-parallax>
       </section>
 
-      <section v-for="(item, index) in items" v-bind:key="index" :id="'scroll-' + item.title">
+      <section
+        v-for="(item, index) in items"
+        v-bind:key="index"
+        :id="'scroll-' + item.title"
+      >
         <v-layout column wrap class="my-12" align-center>
           <v-flex xs12 sm4 class="my-4">
             <div class="text-center">
               <v-icon x-large class="blue--text text--lighten-2">{{
-                  item.icon
+                item.icon
               }}</v-icon>
               <h2 class="text-lg-h4 headline">{{ item.text }}</h2>
             </div>
@@ -74,9 +58,16 @@
           <v-flex xs12>
             <v-container grid-list-xl>
               <v-layout row wrap align-center>
-                <v-flex xs12 v-for="(paragraph, index) in item.paragraphs" v-bind:key="index">
+                <v-flex
+                  xs12
+                  v-for="(paragraph, index) in item.paragraphs"
+                  v-bind:key="index"
+                >
                   <v-card flat class="transparent">
-                    <v-card-text class="text-lg-h5" v-html="paragraph"></v-card-text>
+                    <v-card-text
+                      class="text-lg-h5"
+                      v-html="paragraph"
+                    ></v-card-text>
                   </v-card>
                 </v-flex>
               </v-layout>
@@ -86,27 +77,57 @@
               </v-layout>
               <v-layout v-if="item.title == 'Auction'" row wrap align-center>
                 <v-flex xs12>
-                  <span class="subtitle-1 centerElement">A Special Thank you to Our 2019 Auction Donors</span>
-                  <v-btn color="success" class="centerElement" @click="showAuctionThanks = true">View Donors</v-btn>
+                  <span class="subtitle-1 centerElement"
+                    >A Special Thank you to Our 2019 Auction Donors</span
+                  >
+                  <v-btn
+                    color="success"
+                    class="centerElement"
+                    @click="showAuctionThanks = true"
+                    >View Donors</v-btn
+                  >
                 </v-flex>
               </v-layout>
             </v-container>
           </v-flex>
         </v-layout>
-        <v-list v-if="item.sponsors" color="transparent" style="text-align: center;" class="mt-0 pt-0">
+        <v-list
+          v-if="item.sponsors"
+          color="transparent"
+          style="text-align: center"
+          class="mt-0 pt-0"
+        >
           <v-list-item v-for="(sponsor, index) in item.sponsors" :key="index">
-            <v-list-item-title class="text-lg-h4 headline">{{ sponsor }}</v-list-item-title>
+            <v-list-item-title class="text-lg-h4 headline">{{
+              sponsor
+            }}</v-list-item-title>
           </v-list-item>
         </v-list>
         <v-container v-if="item.photos">
           <v-row>
-            <v-col v-for="(photo, index) in item.photos" :key="index" class="d-flex child-flex" cols="4"
-              @click="showPhoto(photo)">
+            <v-col
+              v-for="(photo, index) in item.photos"
+              :key="index"
+              class="d-flex child-flex"
+              cols="4"
+              @click="showPhoto(photo)"
+            >
               <v-card light flat tile class="d-flex">
-                <v-img :src="photo" aspect-ratio="1" :contain="overrideContain(photo)">
+                <v-img
+                  :src="photo"
+                  aspect-ratio="1"
+                  :contain="overrideContain(photo)"
+                >
                   <template v-slot:placeholder>
-                    <v-row class="fill-height ma-0" align="center" justify="center">
-                      <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+                    <v-row
+                      class="fill-height ma-0"
+                      align="center"
+                      justify="center"
+                    >
+                      <v-progress-circular
+                        indeterminate
+                        color="grey lighten-5"
+                      ></v-progress-circular>
                     </v-row>
                   </template>
                 </v-img>
@@ -123,7 +144,14 @@
               {{ "Unlimited Food & Drinks" }}
             </div>
             <em class="outlinedPictureText">Register today!</em>
-            <v-btn class="mt-12" color="blue lighten-2" dark large @click="openUrl(handbidWebsite)">Register</v-btn>
+            <v-btn
+              class="mt-12"
+              color="blue lighten-2"
+              dark
+              large
+              @click="openUrl(handbidWebsite)"
+              >Register</v-btn
+            >
           </v-layout>
         </v-parallax>
       </section>
@@ -144,50 +172,70 @@
                 <v-card-title primary-title class="layout justify-center">
                   <div class="headline">Contact us</div>
                 </v-card-title>
-                <v-card-text>For the latest updates follow along on social
-                  media.</v-card-text>
+                <v-card-text
+                  >For the latest updates follow along on social
+                  media.</v-card-text
+                >
                 <v-list class="transparent">
-                  <v-list-item @click="
-                    openUrl('https://www.instagram.com/standreweagles/')
-                  ">
+                  <v-list-item
+                    @click="
+                      openUrl('https://www.instagram.com/standreweagles/')
+                    "
+                  >
                     <v-list-item-action>
-                      <v-icon class="red--text text--lighten-2">mdi-instagram</v-icon>
+                      <v-icon class="red--text text--lighten-2"
+                        >mdi-instagram</v-icon
+                      >
                     </v-list-item-action>
                     <v-list-item-content>
                       <v-list-item-title>@standreweagles</v-list-item-title>
                     </v-list-item-content>
                   </v-list-item>
-                  <v-list-item @click="
-                    openUrl(
-                      'https://www.facebook.com/pages/St%20Andrew%20The%20Apostle%20School/750492388378856/'
-                    )
-                  ">
+                  <v-list-item
+                    @click="
+                      openUrl(
+                        'https://www.facebook.com/pages/St%20Andrew%20The%20Apostle%20School/750492388378856/'
+                      )
+                    "
+                  >
                     <v-list-item-action>
-                      <v-icon class="blue--text text--lighten-2">mdi-facebook</v-icon>
+                      <v-icon class="blue--text text--lighten-2"
+                        >mdi-facebook</v-icon
+                      >
                     </v-list-item-action>
                     <v-list-item-content>
-                      <v-list-item-title>St Andrew The Apostle School</v-list-item-title>
+                      <v-list-item-title
+                        >St Andrew The Apostle School</v-list-item-title
+                      >
                     </v-list-item-content>
                   </v-list-item>
                   <v-list-item @click="openUrl('mailto:' + emailTo)">
                     <v-list-item-action>
-                      <v-icon class="yellow--text text--lighten-2">mdi-email</v-icon>
+                      <v-icon class="yellow--text text--lighten-2"
+                        >mdi-email</v-icon
+                      >
                     </v-list-item-action>
                     <v-list-item-content>
                       <v-list-item-title>{{ emailTo }}</v-list-item-title>
                     </v-list-item-content>
                   </v-list-item>
-                  <v-list-item @click="
-                    openUrl(
-                      'https://www.google.com/maps/place/6720+Union+Mill+Rd,+Clifton,+VA+20124'
-                    )
-                  ">
+                  <v-list-item
+                    @click="
+                      openUrl(
+                        'https://www.google.com/maps/place/6720+Union+Mill+Rd,+Clifton,+VA+20124'
+                      )
+                    "
+                  >
                     <v-list-item-action>
-                      <v-icon class="blue--text text--lighten-2">mdi-map-marker</v-icon>
+                      <v-icon class="blue--text text--lighten-2"
+                        >mdi-map-marker</v-icon
+                      >
                     </v-list-item-action>
                     <v-list-item-content>
-                      <v-list-item-title>6720B Union Mill Rd, Clifton, VA
-                        20124</v-list-item-title>
+                      <v-list-item-title
+                        >6720B Union Mill Rd, Clifton, VA
+                        20124</v-list-item-title
+                      >
                     </v-list-item-content>
                   </v-list-item>
                 </v-list>
@@ -203,7 +251,9 @@
         <div class="white--text ml-4">-->
         <v-icon class="red--text">mdi-glass-wine</v-icon>
         <v-spacer></v-spacer>
-        <a class="white--text" href="http://www.st-andrew.org/" target="_blank">St. Andrew the Apostle</a>
+        <a class="white--text" href="http://www.st-andrew.org/" target="_blank"
+          >St. Andrew the Apostle</a
+        >
         <v-spacer></v-spacer>
         <v-icon class="amber--text">mdi-beer</v-icon>
         <!-- </div>
@@ -211,93 +261,28 @@
         </v-layout>-->
       </v-footer>
     </v-main>
-    <v-dialog v-model="registerDialog" max-width="600px">
-      <v-card>
-        <v-card-title>
-          <span class="headline">Register</span>
-        </v-card-title>
-        <v-card-text>
-          <v-container>
-            <v-row>
-              <v-col cols="12" sm="6" md="4">
-                <v-text-field v-model="registrationFirstName" label="First name*" required></v-text-field>
-              </v-col>
-              <v-col cols="12" sm="6" md="4">
-                <v-text-field v-model="registrationMiddleName" label="Middle name"></v-text-field>
-              </v-col>
-              <v-col cols="12" sm="6" md="4">
-                <v-text-field v-model="registrationLastName" label="Last name*" required></v-text-field>
-              </v-col>
-              <!-- <v-col cols="12">
-                <v-text-field v-model="registrationEmail" label="Email*" required hint="Please enter a valid email address"></v-text-field>
-              </v-col> -->
-              <v-col cols="12">
-                <v-autocomplete v-model="registrationInterestedIn" :items="[
-                  'Tickets',
-                  'Donating to Auction',
-                  'Sponsoring',
-                  'Volunteering',
-                ]" label="Interested in" multiple></v-autocomplete>
-              </v-col>
-            </v-row>
-          </v-container>
-          <small>*indicates required field</small>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="blue darken-1" text @click="registerDialog = false">Close</v-btn>
-          <v-btn color="blue darken-1" text @click="
-            registerDialog = false;
-          submitRegistration();
-          ">Submit</v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
 
-    <v-dialog v-model="imageFullScreen">
-      <v-card light>
-        <v-btn fab style="position: fixed; top: 50px; right: 50px; z-index: 100" @click="imageFullScreen = false">
-          <v-icon>mdi-close</v-icon>
-        </v-btn>
-        <v-img :src="imageFullScreenPath" class="image-full-screen" contain>
-          <template v-slot:placeholder>
-            <v-row class="fill-height ma-0" align="center" justify="center">
-              <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-            </v-row>
-          </template>
-        </v-img>
-      </v-card>
-    </v-dialog>
+    <Register :showDialog.sync="registerDialog" />
 
-    <v-dialog v-model="viewFlyerDialog">
-      <embed :src="pdfName" style="width: calc(100%); height: calc(100vh - 150px)" />
-    </v-dialog>
-    <v-dialog v-model="showAuctionThanks" width="450">
-      <v-card dark>
-        <v-list>
-          <v-list-item v-for="(item, index) in auctionThanksJson" v-bind:key="index" @click="openUrl(item.url)">
-            <v-list-item-icon>
-              <v-icon color="yellow">mdi-star</v-icon>
-            </v-list-item-icon>
+    <ImageEnlarge
+      :showDialog.sync="imageFullScreen"
+      :imageFullScreenPath="imageFullScreenPath"
+    />
 
-            <v-list-item-content>
-              <v-list-item-title v-text="item.title"></v-list-item-title>
-            </v-list-item-content>
-
-            <v-list-item-avatar>
-              <v-btn icon color="info">
-                <v-icon>mdi-web</v-icon>
-              </v-btn>
-            </v-list-item-avatar>
-          </v-list-item>
-        </v-list>
-      </v-card>
-    </v-dialog>
+    <Auction
+      :showDialog.sync="showAuctionThanks"
+      :imageFullScreenPath="imageFullScreenPath"
+    />
   </v-app>
 </template>
 
 <script>
-import auctionJson from "./auctionThanks.json";
+//Components
+import TopBar from "./components/TopBar.vue";
+import Navigation from "./components/Navigation.vue";
+import Auction from "./components/dialogs/Auction.vue";
+import ImageEnlarge from "./components/dialogs/ImageEnlarge.vue";
+import Register from "./components/dialogs/Register.vue";
 
 const HANDBID_WEBSITE =
   "https://events.handbid.com/auctions/forks-corks-and-kegs-2023";
@@ -307,7 +292,11 @@ export default {
   name: "App",
 
   components: {
-    //HelloWorld,
+    TopBar,
+    Navigation,
+    Auction,
+    ImageEnlarge,
+    Register,
   },
 
   created() {
@@ -323,7 +312,6 @@ export default {
 
   data: () => ({
     showAuctionThanks: false,
-    viewFlyerDialog: false,
     imageFullScreen: false,
     imageFullScreenPath: "",
     registerDialog: false,
@@ -394,7 +382,7 @@ export default {
           "Paris Baguette Centreville",
           "3 Aces Home Healthcare",
           "Burke Centre Pet Sitting",
-        ]
+        ],
       },
       {
         icon: "mdi-gavel",
@@ -409,7 +397,8 @@ export default {
         title: "BeerWine",
         text: "Beer & Wine",
         paragraphs: [
-          "Your ticket includes unlimited samplings of all beer and wine selections.  Breweries sponsoring our event include Old Bust Head Brewery, Tucked Away Brewing Co, Ono Brewing Co, Mustang Sally Brewery, and Eavesdrop Brewing Co. Each brewery offers a contrasting selection of its best brews. We also feature a wide-ranging variety of Virginia wines, all sponsored by Rappahannock Cellars.",],
+          "Your ticket includes unlimited samplings of all beer and wine selections.  Breweries sponsoring our event include Old Bust Head Brewery, Tucked Away Brewing Co, Ono Brewing Co, Mustang Sally Brewery, and Eavesdrop Brewing Co. Each brewery offers a contrasting selection of its best brews. We also feature a wide-ranging variety of Virginia wines, all sponsored by Rappahannock Cellars.",
+        ],
       },
       {
         icon: "mdi-food",
@@ -431,7 +420,7 @@ export default {
           "Chutney Mary’s",
           "Chix N Stix",
           "Mama’s Donuts",
-        ]
+        ],
       },
       {
         icon: "mdi-camera",
@@ -453,52 +442,6 @@ export default {
         ],
       },
     ],
-    itemsFooter: [
-      {
-        icon: "mdi-comment",
-        text: "Send Feedback",
-        clickEvent: (myThis) => {
-          window.open(
-            "mailto:" +
-            myThis.emailTo +
-            "?cc=" +
-            myThis.emailCC +
-            "&subject=" +
-            myThis.feedbackEmailSub +
-            "&body=" +
-            myThis.feedbackEmailBody
-          );
-        },
-      },
-      {
-        icon: "mdi-email",
-        text: "Contact Us",
-        clickEvent: (myThis) => {
-          window.open(
-            "mailto:" +
-            myThis.emailTo +
-            "?cc=" +
-            myThis.emailCC +
-            "&subject=" +
-            myThis.contactEmailSub +
-            "&body=" +
-            myThis.contactEmailBody
-          );
-        },
-      },
-      {
-        icon: "mdi-account-plus",
-        text: "Register",
-        clickEvent: (myThis) => {
-          myThis.openUrl(myThis.handbidWebsite);
-        },
-      },
-    ],
-    scrollOptions: {
-      duration: 600,
-      offset: 0,
-      easing: "easeInOutCubic",
-    },
     companyInfo:
       "The St Andrew School PTO serves the students of St Andrew the Apostle School in Clifton, Virginia.  We are a 501(c)3 non-profit organization.  All funds raised through Forks, Corks & Kegs goes directly to the talented students of St Andrew’s",
     emailTo: "forkscorksandkegs@gmail.com",
@@ -509,24 +452,17 @@ export default {
     contactEmailSub: "Contact Forks, Corks, and Kegs",
     contactEmailBody:
       "Please write your question here.  We will get back with you shortly.  Thanks you!",
-    registrationFirstName: "",
-    registrationMiddleName: "",
-    registrationLastName: "",
-    // registrationEmail: "",
-    registrationInterestedIn: [],
     handbidWebsite: HANDBID_WEBSITE,
     pdfName: PDF_NAME,
   }),
-  computed: {
-    auctionThanksJson() {
-      if (auctionJson) {
-        return auctionJson;
-      } else {
-        return [];
-      }
-    },
-  },
+  computed: {},
   methods: {
+    toggleDrawer() {
+      this.drawer = !this.drawer;
+    },
+    setDrawer(val) {
+      this.drawer = val;
+    },
     overrideContain(photo) {
       //Need to use Contain on this one photo because it shows "UCKED"
       return photo.indexOf("Tucked Away Logo") != -1;
@@ -543,47 +479,32 @@ export default {
     openUrl(URL) {
       window.open(URL, "_blank");
     },
-    getMyThis() {
-      return this;
-    },
-    toggleTheme() {
-      this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
-      this.$cookies.set("darkTheme", this.$vuetify.theme.dark);
-    },
-    submitRegistration() {
-      let fullName = this.registrationFirstName;
-      if (this.registrationMiddleName) {
-        fullName += " " + this.registrationMiddleName;
-      }
-      fullName += " " + this.registrationLastName;
-      let subject = "Forks, Corks, & Kegs Registration for " + fullName;
-      let body = `I, ${fullName}, would like to register for Forks, Corks, and Kegs.\r\n`;
-
-      let interested = this.registrationInterestedIn.slice();
-      let lastInterested = interested.pop();
-
-      if (interested.length > 0) {
-        body += `I'm interested in ${interested.join(
-          ", "
-        )} and ${lastInterested}.`;
-      } else {
-        body += `I'm interested in ${lastInterested}.`;
-      }
-
-      //Properly encode the strings first
-      subject = encodeURIComponent(subject);
-      body = encodeURIComponent(body);
-
+    sendFeedback() {
       window.open(
         "mailto:" +
-        this.emailTo +
-        "?cc=" +
-        this.emailCC +
-        "&subject=" +
-        subject +
-        "&body=" +
-        body
+          this.emailTo +
+          "?cc=" +
+          this.emailCC +
+          "&subject=" +
+          this.feedbackEmailSub +
+          "&body=" +
+          this.feedbackEmailBody
       );
+    },
+    contactUs() {
+      window.open(
+        "mailto:" +
+          this.emailTo +
+          "?cc=" +
+          this.emailCC +
+          "&subject=" +
+          this.contactEmailSub +
+          "&body=" +
+          this.contactEmailBody
+      );
+    },
+    register() {
+      this.openUrl(this.handbidWebsite);
     },
   },
 };
