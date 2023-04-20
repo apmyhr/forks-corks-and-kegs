@@ -11,35 +11,7 @@
     />
 
     <v-main>
-      <section dark>
-        <v-parallax src="@/assets/wine_cheese2.jpg" height="700">
-          <v-layout column align-center justify-center class="white--text">
-            <span class="text-lg-h1 text-h3 ma-4 pt-4 text-center">{{
-              title
-            }}</span>
-            <div class="text-lg-h5 text-subtitle-2 mb-4 text-center">
-              {{ date }}
-            </div>
-            <img src="@/assets/logo.png" alt="Vuetify.js" height="300" />
-            <v-btn
-              class="mt-12"
-              color="blue lighten-2"
-              dark
-              large
-              @click="openUrl(handbidWebsite)"
-              >Register</v-btn
-            >
-            <v-btn
-              class="mt-12"
-              color="green lighten-2"
-              dark
-              large
-              @click="openFlyer"
-              >View the Flyer</v-btn
-            >
-          </v-layout>
-        </v-parallax>
-      </section>
+      <TopSection :handbidWebsite="handbidWebsite" />
 
       <section
         v-for="(item, index) in items"
@@ -111,25 +83,7 @@
         />
       </section>
 
-      <section>
-        <v-parallax src="@/assets/beer.jpg" height="380">
-          <v-layout column align-center justify-center>
-            <div class="headline outlined-picture-text mb-4 text-center">
-              {{ "Unlimited Food & Drinks" }}
-            </div>
-            <em class="outlined-picture-text">Register today!</em>
-            <v-btn
-              class="mt-12"
-              color="blue lighten-2"
-              dark
-              large
-              @click="openUrl(handbidWebsite)"
-              >Register</v-btn
-            >
-          </v-layout>
-        </v-parallax>
-      </section>
-
+      <RegisterSection :handbidWebsite="handbidWebsite" />
       <BottomSection :emailTo="emailTo" />
       <FooterSection />
     </v-main>
@@ -156,12 +110,13 @@ import Auction from "./components/dialogs/Auction.vue";
 import ImageEnlarge from "./components/dialogs/ImageEnlarge.vue";
 import Register from "./components/dialogs/Register.vue";
 import PhotosGrid from "./components/PhotosGrid.vue";
+import TopSection from "./components/sections/TopSection.vue";
+import RegisterSection from "./components/sections/RegisterSection.vue";
 import BottomSection from "./components/sections/BottomSection.vue";
 import FooterSection from "./components/sections/FooterSection.vue";
 
 const HANDBID_WEBSITE =
   "https://events.handbid.com/auctions/forks-corks-and-kegs-2023";
-const PDF_NAME = "2023-ForksCorksKegs-Flyer.pdf";
 
 export default {
   name: "App",
@@ -173,6 +128,8 @@ export default {
     ImageEnlarge,
     Register,
     PhotosGrid,
+    TopSection,
+    RegisterSection,
     BottomSection,
     FooterSection,
   },
@@ -193,8 +150,6 @@ export default {
     imageFullScreen: false,
     imageFullScreenPath: "",
     registerDialog: false,
-    title: "Forks, Corks, & Kegs",
-    date: "Saturday, May 20th 2023 at 6:00 PM",
     drawer: null,
     items: [
       {
@@ -340,7 +295,6 @@ export default {
     contactEmailBody:
       "Please write your question here.  We will get back with you shortly.  Thanks you!",
     handbidWebsite: HANDBID_WEBSITE,
-    pdfName: PDF_NAME,
   }),
   computed: {},
   methods: {
@@ -355,9 +309,6 @@ export default {
       this.$nextTick(() => {
         this.imageFullScreenPath = photo;
       });
-    },
-    openFlyer() {
-      window.open(PDF_NAME, "_blank");
     },
     openUrl(URL) {
       window.open(URL, "_blank");
@@ -399,12 +350,5 @@ export default {
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
-
-.outlined-picture-text {
-  font-weight: bold;
-  color: white;
-  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
-    -1px -1px 0 #000;
 }
 </style>
