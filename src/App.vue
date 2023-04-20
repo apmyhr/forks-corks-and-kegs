@@ -63,19 +63,8 @@
             </v-container>
           </v-flex>
         </v-layout>
-        <v-list
-          v-if="item.sponsors"
-          color="transparent"
-          style="text-align: center"
-          class="mt-0 pt-0"
-        >
-          <v-list-item v-for="(sponsor, index) in item.sponsors" :key="index">
-            <v-list-item-title class="text-lg-h4 headline">{{
-              sponsor
-            }}</v-list-item-title>
-          </v-list-item>
-        </v-list>
 
+        <SponsorsList v-if="item.sponsors" :sponsors="item.sponsors" />
         <PhotosGrid
           v-if="item.photos"
           :photos="item.photos"
@@ -109,6 +98,7 @@ import Navigation from "./components/Navigation.vue";
 import Auction from "./components/dialogs/Auction.vue";
 import ImageEnlarge from "./components/dialogs/ImageEnlarge.vue";
 import Register from "./components/dialogs/Register.vue";
+import SponsorsList from "./components/SponsorsList.vue";
 import PhotosGrid from "./components/PhotosGrid.vue";
 import TopSection from "./components/sections/TopSection.vue";
 import RegisterSection from "./components/sections/RegisterSection.vue";
@@ -127,6 +117,7 @@ export default {
     Auction,
     ImageEnlarge,
     Register,
+    SponsorsList,
     PhotosGrid,
     TopSection,
     RegisterSection,
