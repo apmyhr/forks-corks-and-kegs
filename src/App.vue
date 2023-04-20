@@ -77,12 +77,12 @@
               </v-layout>
               <v-layout v-if="item.title == 'Auction'" row wrap align-center>
                 <v-flex xs12>
-                  <span class="subtitle-1 centerElement"
+                  <span class="subtitle-1 center-element"
                     >A Special Thank you to Our 2019 Auction Donors</span
                   >
                   <v-btn
                     color="success"
-                    class="centerElement"
+                    class="center-element"
                     @click="showAuctionThanks = true"
                     >View Donors</v-btn
                   >
@@ -114,10 +114,10 @@
       <section>
         <v-parallax src="@/assets/beer.jpg" height="380">
           <v-layout column align-center justify-center>
-            <div class="headline outlinedPictureText mb-4 text-center">
+            <div class="headline outlined-picture-text mb-4 text-center">
               {{ "Unlimited Food & Drinks" }}
             </div>
-            <em class="outlinedPictureText">Register today!</em>
+            <em class="outlined-picture-text">Register today!</em>
             <v-btn
               class="mt-12"
               color="blue lighten-2"
@@ -130,110 +130,8 @@
         </v-parallax>
       </section>
 
-      <section>
-        <v-container grid-list-xl>
-          <v-layout row wrap justify-center class="my-12">
-            <v-flex xs12 sm4>
-              <v-card flat class="transparent">
-                <v-card-title primary-title class="layout justify-center">
-                  <div class="headline">PTO</div>
-                </v-card-title>
-                <v-card-text v-text="companyInfo"></v-card-text>
-              </v-card>
-            </v-flex>
-            <v-flex xs12 sm4 offset-sm1>
-              <v-card flat class="transparent">
-                <v-card-title primary-title class="layout justify-center">
-                  <div class="headline">Contact us</div>
-                </v-card-title>
-                <v-card-text
-                  >For the latest updates follow along on social
-                  media.</v-card-text
-                >
-                <v-list class="transparent">
-                  <v-list-item
-                    @click="
-                      openUrl('https://www.instagram.com/standreweagles/')
-                    "
-                  >
-                    <v-list-item-action>
-                      <v-icon class="red--text text--lighten-2"
-                        >mdi-instagram</v-icon
-                      >
-                    </v-list-item-action>
-                    <v-list-item-content>
-                      <v-list-item-title>@standreweagles</v-list-item-title>
-                    </v-list-item-content>
-                  </v-list-item>
-                  <v-list-item
-                    @click="
-                      openUrl(
-                        'https://www.facebook.com/pages/St%20Andrew%20The%20Apostle%20School/750492388378856/'
-                      )
-                    "
-                  >
-                    <v-list-item-action>
-                      <v-icon class="blue--text text--lighten-2"
-                        >mdi-facebook</v-icon
-                      >
-                    </v-list-item-action>
-                    <v-list-item-content>
-                      <v-list-item-title
-                        >St Andrew The Apostle School</v-list-item-title
-                      >
-                    </v-list-item-content>
-                  </v-list-item>
-                  <v-list-item @click="openUrl('mailto:' + emailTo)">
-                    <v-list-item-action>
-                      <v-icon class="yellow--text text--lighten-2"
-                        >mdi-email</v-icon
-                      >
-                    </v-list-item-action>
-                    <v-list-item-content>
-                      <v-list-item-title>{{ emailTo }}</v-list-item-title>
-                    </v-list-item-content>
-                  </v-list-item>
-                  <v-list-item
-                    @click="
-                      openUrl(
-                        'https://www.google.com/maps/place/6720+Union+Mill+Rd,+Clifton,+VA+20124'
-                      )
-                    "
-                  >
-                    <v-list-item-action>
-                      <v-icon class="blue--text text--lighten-2"
-                        >mdi-map-marker</v-icon
-                      >
-                    </v-list-item-action>
-                    <v-list-item-content>
-                      <v-list-item-title
-                        >6720B Union Mill Rd, Clifton, VA
-                        20124</v-list-item-title
-                      >
-                    </v-list-item-content>
-                  </v-list-item>
-                </v-list>
-              </v-card>
-            </v-flex>
-          </v-layout>
-        </v-container>
-      </section>
-
-      <v-footer color="blue darken-2">
-        <!-- <v-layout row wrap align-center>
-          <v-flex xs12>
-        <div class="white--text ml-4">-->
-        <v-icon class="red--text">mdi-glass-wine</v-icon>
-        <v-spacer></v-spacer>
-        <a class="white--text" href="http://www.st-andrew.org/" target="_blank"
-          >St. Andrew the Apostle</a
-        >
-        <v-spacer></v-spacer>
-        <v-icon class="amber--text">mdi-beer</v-icon>
-        <!-- </div>
-          </v-flex>
-        </v-layout>-->
-      </v-footer>
+      <BottomSection :emailTo="emailTo" />
+      <FooterSection />
     </v-main>
 
     <Register :showDialog.sync="registerDialog" />
@@ -258,6 +156,8 @@ import Auction from "./components/dialogs/Auction.vue";
 import ImageEnlarge from "./components/dialogs/ImageEnlarge.vue";
 import Register from "./components/dialogs/Register.vue";
 import PhotosGrid from "./components/PhotosGrid.vue";
+import BottomSection from "./components/sections/BottomSection.vue";
+import FooterSection from "./components/sections/FooterSection.vue";
 
 const HANDBID_WEBSITE =
   "https://events.handbid.com/auctions/forks-corks-and-kegs-2023";
@@ -273,6 +173,8 @@ export default {
     ImageEnlarge,
     Register,
     PhotosGrid,
+    BottomSection,
+    FooterSection,
   },
 
   created() {
@@ -429,8 +331,6 @@ export default {
         ],
       },
     ],
-    companyInfo:
-      "The St Andrew School PTO serves the students of St Andrew the Apostle School in Clifton, Virginia.  We are a 501(c)3 non-profit organization.  All funds raised through Forks, Corks & Kegs goes directly to the talented students of St Andrew’s",
     emailTo: "forkscorksandkegs@gmail.com",
     emailCC: "",
     feedbackEmailSub: "Forks, Corks, and Kegs Feedback",
@@ -494,25 +394,17 @@ export default {
 </script>
 
 <style scoped>
-.centerElement {
+.center-element {
   text-align: center;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-.outlinedPictureText {
+.outlined-picture-text {
   font-weight: bold;
   color: white;
   text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
-}
-
-.image-full-screen {
-  max-width: 100%;
-  max-height: 80vh;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 </style>

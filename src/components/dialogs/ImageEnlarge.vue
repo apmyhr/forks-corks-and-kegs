@@ -42,4 +42,12 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.image-full-screen {
+  max-width: 100%;
+  max-height: 80vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
