@@ -12,6 +12,7 @@
 
     <v-main>
       <TopSection :handbidWebsite="handbidWebsite" />
+      <VideoSection />
 
       <section
         v-for="(item, index) in items"
@@ -101,6 +102,7 @@ import Register from "./components/dialogs/Register.vue";
 import SponsorsList from "./components/SponsorsList.vue";
 import PhotosGrid from "./components/PhotosGrid.vue";
 import TopSection from "./components/sections/TopSection.vue";
+import VideoSection from "./components/sections/VideoSection.vue";
 import RegisterSection from "./components/sections/RegisterSection.vue";
 import BottomSection from "./components/sections/BottomSection.vue";
 import FooterSection from "./components/sections/FooterSection.vue";
@@ -120,6 +122,7 @@ export default {
     SponsorsList,
     PhotosGrid,
     TopSection,
+    VideoSection,
     RegisterSection,
     BottomSection,
     FooterSection,
