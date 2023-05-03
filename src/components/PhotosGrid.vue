@@ -31,6 +31,7 @@
 
 <script>
 const OVERRIDE_CONTAINS = [
+  "/sponsors2023/CabooseBrewingCo.png",
   "/sponsors2023/CheronOrthodontics.jpg",
   "/sponsors2023/CasanelVineyardsWinery.png",
   "/sponsors2023/CentrevilleDance.png",
