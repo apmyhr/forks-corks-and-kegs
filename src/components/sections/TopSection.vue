@@ -31,7 +31,7 @@
 </template>
 
 <script>
-const PDF_NAME = "2023-ForksCorksKegs-Flyer.pdf";
+const PDF_NAME = "24-House-FCK24-Flyer1-Save the date with QR Code-FINAL.pdf";
 
 export default {
   name: "TopSection",
@@ -40,14 +40,14 @@ export default {
   },
   data: () => ({
     title: "Forks, Corks, & Kegs",
-    date: "Saturday, May 20th 2023 at 6:00 PM",
+    date: "Saturday, May 18th 2024 at 6:00 PM",
   }),
   methods: {
     openUrl(URL) {
       window.open(URL, "_blank");
     },
     openFlyer() {
-      window.open(PDF_NAME, "_blank");
+      window.open(`/flyers/${PDF_NAME}`, "_blank");
     },
   },
 };

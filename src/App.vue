@@ -51,7 +51,7 @@
               <v-layout v-if="item.title == 'Auction'" row wrap align-center>
                 <v-flex xs12>
                   <span class="subtitle-1 center-element"
-                    >A Special Thank you to Our 2019 Auction Donors</span
+                    >A Special Thanks to Previous Donors</span
                   >
                   <v-btn
                     color="success"
@@ -108,7 +108,7 @@ import BottomSection from "./components/sections/BottomSection.vue";
 import FooterSection from "./components/sections/FooterSection.vue";
 
 const HANDBID_WEBSITE =
-  "https://events.handbid.com/auctions/forks-corks-and-kegs-2023";
+  "https://events.handbid.com/auctions/forks-corks-kegs-2024";
 
 export default {
   name: "App",
@@ -151,7 +151,7 @@ export default {
         title: "Home",
         text: "Home",
         paragraphs: [
-          "St. Andrew the Apostle School PTO will be hosting the fourth annual Forks,Corks, & Kegs on Saturday, May 20, 2023",
+          "St. Andrew the Apostle School PTO will be hosting the fourth annual Forks,Corks, & Kegs on Saturday, May 18, 2023",
           "This exciting tasting festival in Clifton, Virginia will include local breweries, wineries, and food trucks, a live band, as well as a silent auction and raffles. Your ticket includes all-you-can-eat and drink, plus a tasting glass.",
           "Past silent auctions have included local beach house vacations, tropical resort vacations, prime seats to a Washington Capitals game, Washington Nationals Diamond Club tickets, Virginia winery tours and more!",
           "All proceeds from Forks, Corks, & Kegs go to the St Andrew’s School PTO to help support our talented students. Past PTO funds have been used to purchase a new preschool playground, Robotics Club, ActiveBoards, Science Lab curriculum, textbooks, a new school website, field trips, school assemblies, and an iPad library for classroom use.",
@@ -162,14 +162,14 @@ export default {
         title: "Tickets",
         text: "Tickets",
         paragraphs: [
-          `Tickets can be purchased on the <a href='${HANDBID_WEBSITE}'>Handbid website</a> for $55 during Catholic Schools Week Special, Jan. 30th - Feb 5th, $65 before May 15th, and $75 the week of the event. Each ticket includes all you can eat food at the food trucks, all you can drink beer and wine, and a tasting glass.`,
+          `Tickets can be purchased on the <a href='${HANDBID_WEBSITE}'>Handbid website</a> for $65 before May 11th, and $75 the week of the event. Each ticket includes all you can eat food at the food trucks, all you can drink beer and wine, and a tasting glass.`,
         ],
       },
       {
         icon: "mdi-gift-outline",
         text: "Sponsors",
         paragraphs: [
-          "​​Thank you to last year’s generous sponsors!  Our list of sponsors for this year is coming soon. If you are interested in being a sponsor for 2023, please <a href='mailto:lofar9ex56@gmail.com'>contact us</a> for details",
+          "​​Thank you to last year’s generous sponsors!  Our list of sponsors for this year is coming soon. If you are interested in being a sponsor for 2024, please <a href='mailto:crystalmac7@gmail.com'>contact us</a> for details",
         ],
         photos: [
           "/sponsors2023/CabooseBrewingCo.png",
@@ -225,7 +225,7 @@ export default {
         title: "Auction",
         text: "Auction",
         paragraphs: [
-          `The Forks, Corks & Kegs silent auction includes tropical vacation packages, Bethany Beach house vacations, Diamond Club Nationals tickets (sponsored by FH Furr), Capitals tickets, Virginia winery tasting tours, restaurant gift cards, summer camps, sports lessons, museum tickets, children’s birthday party packages, skiing, golf, theater tickets, and every sort of local activity from laser tag to zip lining that will make your family very happy.  Bidding will open at 6:00 am May 14th on our <a href='${HANDBID_WEBSITE}'>Handbid online auction</a> and close at 10:00 pm the night of May 20th.  All purchased items can be picked up at the event, or the following Monday in the school office.`,
+          `The Forks, Corks & Kegs silent auction has included tropical vacation packages, Bethany Beach house vacations, Diamond Club Nationals tickets (sponsored by FH Furr), Capitals tickets, Virginia winery tasting tours, restaurant gift cards, summer camps, sports lessons, museum tickets, children’s birthday party packages, skiing, golf, theater tickets, and every sort of local activity from laser tag to zip lining that will make your family very happy.  Bidding will open at 6:00 am May 10th on our <a href='${HANDBID_WEBSITE}'>Handbid online auction</a> and close at 11:00 pm the night of May 18th.  All purchased items can be picked up at the event, or the following Monday in the school office.`,
         ],
       },
       {
