@@ -162,7 +162,7 @@ export default {
         title: "Tickets",
         text: "Tickets",
         paragraphs: [
-          `Tickets can be purchased on the <a href='${HANDBID_WEBSITE}'>Handbid website</a> for $65 before May 11th, and $75 the week of the event. Each ticket includes all you can eat food at the food trucks, all you can drink beer and wine, and a tasting glass.`,
+          `Tickets can be purchased on the <a href='${HANDBID_WEBSITE}'>Handbid website</a> for $55 during Catholic Schools Week Special, Jan. 26th - Feb 4th, $65 before May 11th, and $75 the week of the event. Each ticket includes all you can eat food at the food trucks, all you can drink beer and wine, and a tasting glass.`,
         ],
       },
       {
@@ -189,11 +189,13 @@ export default {
           "/sponsors2022/VaRealDealsPNG.png",
           "/sponsors2022/DP.png",
           "/sponsors2022/chantilly-glow-logo.png",
+          "/sponsors2022/c&r_logo.png",
+          "/sponsors2022/pbb-social-badge.png",
+
+          // Removed in 2024
           // "/sponsors2022/thumbnail_McKing Logo.png",
           // "/sponsors2022/thumbnail_New Headshot.jpg",
           // "/sponsors2022/thumbnail_SRG Logo.jpg",
-          "/sponsors2022/c&r_logo.png",
-          "/sponsors2022/pbb-social-badge.png",
         ],
         sponsors: [
           "Caboose",
@@ -204,7 +206,12 @@ export default {
           "Casanel Vineyards & Winery",
           "Chateau O'Brien Winery & Vineyard",
 
-          //2024
+          // Removed in 2024
+          // "VA Real Deals Team",
+          // "Chantilly Academy Gymnastics and Preschool",
+          // "Showcase Realty Group",
+
+          // From 2023 to 2024
           "Angie Hill Real Estate",
           "Card My Yard",
           "Cheron Orthodontics",
@@ -215,11 +222,13 @@ export default {
           "Maestri Family",
           "Premium Lawn and Landscape",
           "The Maranian Family",
+          "C&R Printing",
+          "Paris Baguette Centreville",
+
+          // Removed in 2024
           // "VA Real Deals Team",
           // "Chantilly Academy Gymnastics and Preschool",
           // "Showcase Realty Group",
-          "C&R Printing",
-          "Paris Baguette Centreville",
         ],
       },
       {
