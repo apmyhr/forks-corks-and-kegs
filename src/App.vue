@@ -44,23 +44,6 @@
                   </v-card>
                 </v-flex>
               </v-layout>
-
-              <v-layout v-if="item.title == 'Auction'" row wrap align-center>
-                <v-flex xs12> </v-flex>
-              </v-layout>
-              <v-layout v-if="item.title == 'Auction'" row wrap align-center>
-                <v-flex xs12>
-                  <span class="subtitle-1 center-element"
-                    >A Special Thanks to Previous Donors</span
-                  >
-                  <v-btn
-                    color="success"
-                    class="center-element"
-                    @click="showAuctionThanks = true"
-                    >View Donors</v-btn
-                  >
-                </v-flex>
-              </v-layout>
             </v-container>
           </v-flex>
         </v-layout>
@@ -84,11 +67,6 @@
       :showDialog.sync="imageFullScreen"
       :imageFullScreenPath="imageFullScreenPath"
     />
-
-    <Auction
-      :showDialog.sync="showAuctionThanks"
-      :imageFullScreenPath="imageFullScreenPath"
-    />
   </v-app>
 </template>
 
@@ -96,7 +74,6 @@
 //Components
 import TopBar from "./components/TopBar.vue";
 import Navigation from "./components/Navigation.vue";
-import Auction from "./components/dialogs/Auction.vue";
 import ImageEnlarge from "./components/dialogs/ImageEnlarge.vue";
 import Register from "./components/dialogs/Register.vue";
 import SponsorsList from "./components/SponsorsList.vue";
@@ -116,7 +93,6 @@ export default {
   components: {
     TopBar,
     Navigation,
-    Auction,
     ImageEnlarge,
     Register,
     SponsorsList,
@@ -140,7 +116,6 @@ export default {
   },
 
   data: () => ({
-    showAuctionThanks: false,
     imageFullScreen: false,
     imageFullScreenPath: "",
     registerDialog: false,
@@ -244,6 +219,7 @@ export default {
         text: "Auction",
         paragraphs: [
           `The Forks, Corks & Kegs silent auction has included tropical vacation packages, Bethany Beach house vacations, Diamond Club Nationals tickets (sponsored by FH Furr), Capitals tickets, Virginia winery tasting tours, restaurant gift cards, summer camps, sports lessons, museum tickets, children’s birthday party packages, skiing, golf, theater tickets, and every sort of local activity from laser tag to zip lining that will make your family very happy.  Bidding will open at 6:00 am May 10th on our <a href='${HANDBID_WEBSITE}'>Handbid online auction</a> and close at 11:00 pm the night of May 18th.  All purchased items can be picked up at the event, or the following Monday in the school office.`,
+          "The silent auction is the primary means by which Forks, Corks & Kegs raises funds and previous donors have included American Shakespeare Center, Aqua-Tots, Burn Boot Camp, Bunnyman Brewing, Caboose Brewing, Casanel Vineyards, Chantilly Gymnastics, Chateau O'Brien, Children's Science Center, Creative Cauldron, Dave & Busters, DC Nationals, DC Capitols, Dulles Golf, Elite Island Resorts, Fairfax Collegiate, First Watch, Flynn O'Hara, Four Seasons Georgetown, Funland, Gadino Cellars, George Mason Athletics, Glory Days, Great American Restaurants, Great Country Farms, GoApe, Heroic Axe, Hillwood Estate, Hogback Mountain Paintball, Hylton Performing Arts Center, International Spy Museum, Jammin Java, KID Museum, Lazy Dog Cafe, Lewis Ginter Botanic Gardens, Luray Caverns, Manassas Ballet, Merrifield Garden Center, Meadows Farms Garden Center, Mission BBQ, Monster Golf, Montpelier, Monticello, Mount Vernon, My Gym, Naked Mountain, Narmada Winery, nZone, Old Farm Winery, Old Bust Head Brewery, Outer Limits Game Lounge, Panera, Paradise Springs, Paschal Lamb, Pev's Paintball, PSA, Potomac River Riders, Potomac River Running, Tennis DNA, Rappahanock Cellars, Rosemary's Thyme, SciGenius Camps, Seven Oaks Lavender Farm, Shadowland, Shenandoah River Outfitters, Showplace ICON Theater, Sight & Sound Theater, Studio Theater, Signature Theater, Skate n Fun Zone, Starbucks, Tarara Winery, Texas de Brazil, Tucked Away Brewing, Capitol Grille, Mariner's Museum, Total Wine & More, Twin Lakes Golf Course, Westfield Golf Course, Westfields Marriott, Ultimate Archery, University Theater, Valvoline, Vertical Rock, Villagio, Virginia International Raceway, Walkerville Southern Railroad, Watermark Cruises, Winery at La Grange, Wolf Trap Performing Arts, and Zavazone.",
         ],
       },
       {
