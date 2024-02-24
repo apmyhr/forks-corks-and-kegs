@@ -172,13 +172,6 @@ export default {
           "​​Thank you to last year’s generous sponsors!  Our list of sponsors for this year is coming soon. If you are interested in being a sponsor for 2024, please <a href='mailto:crystalmac7@gmail.com'>contact us</a> for details",
         ],
         photos: [
-          "/sponsors2023/CabooseBrewingCo.png",
-          "/sponsors2022/old-bust-head.png",
-          "/sponsors2022/Tucked Away Logo 2.png",
-          "/sponsors2022/MSB.png",
-          "/sponsors2022/wine-logo-2.jpg",
-          "/sponsors2023/CasanelVineyardsWinery.png",
-          "/sponsors2023/chateau_obrien_logo2.jpg",
           "/sponsors2023/AngieHill.png",
           "/sponsors2023/CardMyYard.png",
           "/sponsors2023/CentrevilleDance.png",
@@ -193,24 +186,25 @@ export default {
           "/sponsors2022/pbb-social-badge.png",
 
           // Removed in 2024
+          // "/sponsors2023/CabooseBrewingCo.png",
+          // "/sponsors2022/old-bust-head.png",
+          // "/sponsors2022/MSB.png",
           // "/sponsors2022/thumbnail_McKing Logo.png",
           // "/sponsors2022/thumbnail_New Headshot.jpg",
           // "/sponsors2022/thumbnail_SRG Logo.jpg",
+          // 2024
+          "/sponsors2022/Tucked Away Logo 2.png",
+          "/sponsors2024/brew-republic-bierwerks.png",
+          "/sponsors2024/bunnyman-brewing.png",
+          "/sponsors2024/evesdrop-brewery.png",
+          "/sponsors2024/heritage-brewing.jpeg",
+
+          // Winneries: Need the list
+          "/sponsors2022/wine-logo-2.jpg",
+          "/sponsors2023/CasanelVineyardsWinery.png",
+          "/sponsors2023/chateau_obrien_logo2.jpg",
         ],
         sponsors: [
-          "Caboose",
-          "Old Bust Head",
-          "Tucked Away",
-          "Mustang Sally",
-          "Rappahannock Cellars",
-          "Casanel Vineyards & Winery",
-          "Chateau O'Brien Winery & Vineyard",
-
-          // Removed in 2024
-          // "VA Real Deals Team",
-          // "Chantilly Academy Gymnastics and Preschool",
-          // "Showcase Realty Group",
-
           // From 2023 to 2024
           "Angie Hill Real Estate",
           "Card My Yard",
@@ -226,9 +220,22 @@ export default {
           "Paris Baguette Centreville",
 
           // Removed in 2024
+          // "Caboose",
+          // "Old Bust Head",
+          // "Mustang Sally",
           // "VA Real Deals Team",
           // "Chantilly Academy Gymnastics and Preschool",
           // "Showcase Realty Group",
+          // 2024
+          "Tucked Away",
+          "Brew Republic",
+          "Bunnyman Brewing",
+          "Eavesdrop Brewery",
+          "Heritage Brewing",
+          // Winneries: Need the list
+          "Rappahannock Cellars",
+          "Casanel Vineyards & Winery",
+          "Chateau O'Brien Winery & Vineyard",
         ],
       },
       {
@@ -244,7 +251,7 @@ export default {
         title: "BeerWine",
         text: "Beer & Wine",
         paragraphs: [
-          "Your ticket includes unlimited samplings of all beer and wine selections.  Breweries sponsoring our event include Caboose, Old Bust Head Brewery, Tucked Away Brewing Co, and Mustang Sally Brewery. Each brewery offers a contrasting selection of its best brews. We also feature a wide-ranging variety of Virginia wines, sponsored by Rappahannock Cellars, Chateau O'Brien Winery & Vineyard , and Casanel Vineyards & Winery.",
+          "Your ticket includes unlimited samplings of all beer and wine selections.  Breweries sponsoring our event include Tucked Away Brewing Co, Brew Republic, Bunnyman Brewing, Eavesdrop Brewery, and Heritage Brewing. Each brewery offers a contrasting selection of its best brews. We also feature a wide-ranging variety of Virginia wines, sponsored by Rappahannock Cellars, Chateau O'Brien Winery & Vineyard , and Casanel Vineyards & Winery.",
         ],
       },
       {
