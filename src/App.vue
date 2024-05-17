@@ -218,7 +218,7 @@ export default {
           },
           {
             title: "Kathy O'Donnell Realtor",
-            link: "https://www.coldwellbanker.com/pa/newtown/agents/kathy-odonnell/aid-P00200000GVwMNCpYyxcnNikgAr9U5irnzbwGWpU",
+            link: "https://www.facebook.com/forsalebykathy/",
           },
           {
             title: "The Maestri Family",
