@@ -31,7 +31,7 @@
 </template>
 
 <script>
-const PDF_NAME = "24-House-FCK24-Flyer1-Save the date with QR Code-FINAL.pdf";
+const PDF_NAME = "2025-Forksflyer.pdf";
 
 export default {
   name: "TopSection",
@@ -40,7 +40,7 @@ export default {
   },
   data: () => ({
     title: "Forks, Corks, & Kegs",
-    date: "Saturday, May 18th 2024 at 6:00 PM",
+    date: "Saturday, May 10th 2025 at 6:00 PM",
   }),
   methods: {
     openUrl(URL) {

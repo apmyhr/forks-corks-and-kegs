@@ -85,7 +85,7 @@ import BottomSection from "./components/sections/BottomSection.vue";
 import FooterSection from "./components/sections/FooterSection.vue";
 
 const HANDBID_WEBSITE =
-  "https://events.handbid.com/auctions/forks-corks-kegs-2024";
+  "https://events.handbid.com/auctions/forks-corks-and-kegs-2025";
 
 export default {
   name: "App",
@@ -126,7 +126,7 @@ export default {
         title: "Home",
         text: "Home",
         paragraphs: [
-          "St. Andrew the Apostle School PTO will be hosting the seventh annual Forks,Corks, & Kegs on Saturday, May 18, 2024",
+          "St. Andrew the Apostle School PTO will be hosting the seventh annual Forks,Corks, & Kegs on Saturday, May 10, 2025",
           "This exciting tasting festival in Clifton, Virginia will include local breweries, wineries, and food trucks, a live band, as well as a silent auction and raffles. Your ticket includes all-you-can-eat and drink, plus a tasting glass.",
           "Past silent auctions have included local beach house vacations, tropical resort vacations, prime seats to a Washington Capitals game, Washington Nationals Diamond Club tickets, Virginia winery tours and more!",
           "All proceeds from Forks, Corks, & Kegs go to the St Andrew’s School PTO to help support our talented students. Past PTO funds have been used to purchase a new preschool playground, Robotics Club, ActiveBoards, Science Lab curriculum, textbooks, a new school website, field trips, school assemblies, and an iPad library for classroom use.",
@@ -137,7 +137,7 @@ export default {
         title: "Tickets",
         text: "Tickets",
         paragraphs: [
-          `Tickets can be purchased on the <a href='${HANDBID_WEBSITE}'>Handbid website</a> for $55 during Catholic Schools Week Special, Jan. 26th - Feb 4th, $65 before May 11th, and $75 the week of the event. Each ticket includes all you can eat food at the food trucks, all you can drink beer and wine, and a tasting glass.`,
+          `Tickets can be purchased on the <a href='${HANDBID_WEBSITE}'>Handbid website</a> for $75. Each ticket includes all you can eat food at the food trucks, all you can drink beer and wine, and a tasting glass.`,
         ],
       },
       {
