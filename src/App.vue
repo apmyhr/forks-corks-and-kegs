@@ -143,71 +143,18 @@ export default {
       {
         icon: "mdi-gift-outline",
         text: "Sponsors",
-        paragraphs: [
-          "A HUGE thank you to our Sponsors!  Virginia Eye Care Center, Premium Landscape, Kathy O'Donnell Realtor, The Maestri Family, Planet Direct Mail, Dirt Movers Plus, C & R Printing, Design Pro, Independence Landscape, Homeworks Painting, Mia Saunders Ballet, and Paris Baguette.",
-        ],
+        paragraphs: ["A HUGE thank you to our Sponsors!"],
         photos: [
-          // "/sponsors2023/AngieHill.png",
-          // "/sponsors2023/CardMyYard.png",
-          // "/sponsors2023/CentrevilleDance.png",
-          // "/sponsors2023/CheronOrthodontics.jpg",
-          // "/sponsors2023/NOVABarbell.png",
-          // "/sponsors2022/TheFruitfulForest.png",
-          // "/sponsors2022/PLL_Logo.png",
-          // "/sponsors2022/VaRealDealsPNG.png",
-          // "/sponsors2022/DP.png",
-          // "/sponsors2022/chantilly-glow-logo.png",
-          // "/sponsors2022/c&r_logo.png",
-          // "/sponsors2022/pbb-social-badge.png",
-          // // Removed in 2024
-          // // "/sponsors2023/CabooseBrewingCo.png",
-          // // "/sponsors2022/old-bust-head.png",
-          // // "/sponsors2022/MSB.png",
-          // // "/sponsors2022/thumbnail_McKing Logo.png",
-          // // "/sponsors2022/thumbnail_New Headshot.jpg",
-          // // "/sponsors2022/thumbnail_SRG Logo.jpg",
-          // // 2024
-          // "/sponsors2022/Tucked Away Logo 2.png",
-          // "/sponsors2024/brew-republic-bierwerks.png",
-          // "/sponsors2024/bunnyman-brewing.png",
-          // "/sponsors2024/evesdrop-brewery.png",
-          // "/sponsors2024/heritage-brewing.jpeg",
-          // // Winneries: Need the list
-          // "/sponsors2022/wine-logo-2.jpg",
-          // "/sponsors2023/CasanelVineyardsWinery.png",
-          // "/sponsors2023/chateau_obrien_logo2.jpg",
+          "/sponsors2025/Clifton Farmers Market.png",
+          "/sponsors2025/Dirt Movers Plus Logo.png",
+          "/sponsors2025/Don Churro Logo.png",
+          "/sponsors2025/Kathy ODonnell.png",
+          "/sponsors2025/Mia Saunders.png",
+          "/sponsors2025/Premium Lawn Logo_.png",
+          "/sponsors2025/Red Wing Shoes.JPG",
+          "/sponsors2025/VA Eye Care.png",
         ],
         sponsors: [
-          // // From 2023 to 2024
-          // "Angie Hill Real Estate",
-          // "Card My Yard",
-          // "Cheron Orthodontics",
-          // "NOVA Barbell Club",
-          // "The Fruitful Forest",
-          // "MCKING Consulting",
-          // "Design Pro",
-          // "Maestri Family",
-          // "Premium Lawn and Landscape",
-          // "The Maranian Family",
-          // "C&R Printing",
-          // "Paris Baguette Centreville",
-
-          // // Removed in 2024
-          // // "Caboose",
-          // // "Old Bust Head",
-          // // "Mustang Sally",
-          // // "VA Real Deals Team",
-          // // "Chantilly Academy Gymnastics and Preschool",
-          // // "Showcase Realty Group",
-          // // "Bunnyman Brewing",
-          // // "Eavesdrop Brewery",
-          // "Tucked Away",
-          // "Brew Republic",
-          // "Heritage Brewing",
-          // // Winneries: Need the list
-          // "Rappahannock Cellars",
-          // "Casanel Vineyards & Winery",
-          // "Chateau O'Brien Winery & Vineyard",
           {
             title: "Virginia Eye Care Center",
             link: "https://visionsource-virginiaeyecare.com/",
@@ -220,41 +167,53 @@ export default {
             title: "Kathy O'Donnell Realtor",
             link: "https://www.facebook.com/forsalebykathy/",
           },
-          {
-            title: "The Maestri Family",
-            link: "",
-          },
-          {
-            title: "Planet Direct Mail",
-            link: "https://planetdirectmail.com/",
-          },
+          // {
+          //   title: "The Maestri Family",
+          //   link: "",
+          // },
+          // {
+          //   title: "Planet Direct Mail",
+          //   link: "https://planetdirectmail.com/",
+          // },
           {
             title: "Dirt Movers Plus",
             link: "https://www.dirtmoversplusllc.com/",
           },
-          {
-            title: "C & R Printing",
-            link: "https://www.candrprinting.com/",
-          },
-          {
-            title: "Design Pro",
-            link: "https://micro.designproremodeling.com/home-remodeling",
-          },
-          {
-            title: "Independence Landscape",
-            link: "https://independencelandscape.com/",
-          },
-          {
-            title: "Homeworks Painting",
-            link: "https://homeworkspainting.com/",
-          },
+          // {
+          //   title: "C & R Printing",
+          //   link: "https://www.candrprinting.com/",
+          // },
+          // {
+          //   title: "Design Pro",
+          //   link: "https://micro.designproremodeling.com/home-remodeling",
+          // },
+          // {
+          //   title: "Independence Landscape",
+          //   link: "https://independencelandscape.com/",
+          // },
+          // {
+          //   title: "Homeworks Painting",
+          //   link: "https://homeworkspainting.com/",
+          // },
           {
             title: "Mia Saunders Ballet",
             link: "https://miasaundersballet.com/index.html",
           },
+          // {
+          //   title: "Paris Baguette",
+          //   link: "https://parisbaguette.com/",
+          // },
           {
-            title: "Paris Baguette",
-            link: "https://parisbaguette.com/",
+            title: "Red Wing Shoes Manassas and Springfield",
+            link: "https://stores.redwingshoes.com/manassas-va",
+          },
+          {
+            title: "Don Churro Restaurant",
+            link: "https://donchurrorestaurant.com/",
+          },
+          {
+            title: "Clifton Farmers Market",
+            link: "https://www.facebook.com/people/cliftonfarmersmarket/100089953699305/#",
           },
         ],
       },
