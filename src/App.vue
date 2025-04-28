@@ -154,6 +154,8 @@ export default {
           "/sponsors2025/Premium Lawn Logo_.png",
           "/sponsors2025/Red Wing Shoes.JPG",
           "/sponsors2025/VA Eye Care.png",
+          "/sponsors2025/Valvoline.jpg",
+          "/sponsors2025/planet-direct-mail.png",
         ],
         sponsors: [
           {
@@ -172,14 +174,22 @@ export default {
             title: "Kathy O'Donnell Realtor",
             link: "https://www.facebook.com/forsalebykathy/",
           },
-          // {
-          //   title: "The Maestri Family",
-          //   link: "",
-          // },
-          // {
-          //   title: "Planet Direct Mail",
-          //   link: "https://planetdirectmail.com/",
-          // },
+          {
+            title: "The Maestri Family",
+            link: "",
+          },
+          {
+            title: "The Leroy Family",
+            link: "",
+          },
+          {
+            title: "Valvoline",
+            link: "https://www.valvoline.com/",
+          },
+          {
+            title: "Planet Direct Mail",
+            link: "https://planetdirectmail.com/",
+          },
           {
             title: "Dirt Movers Plus",
             link: "https://www.dirtmoversplusllc.com/",
