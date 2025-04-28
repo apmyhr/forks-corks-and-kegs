@@ -145,6 +145,7 @@ export default {
         text: "Sponsors",
         paragraphs: ["A HUGE thank you to our Sponsors!"],
         photos: [
+          "/sponsors2022/c&r_logo.png",
           "/sponsors2025/Clifton Farmers Market.png",
           "/sponsors2025/Dirt Movers Plus Logo.png",
           "/sponsors2025/Don Churro Logo.png",
@@ -155,6 +156,10 @@ export default {
           "/sponsors2025/VA Eye Care.png",
         ],
         sponsors: [
+          {
+            title: "C & R Printing",
+            link: "https://www.candrprinting.com/",
+          },
           {
             title: "Virginia Eye Care Center",
             link: "https://visionsource-virginiaeyecare.com/",
@@ -179,10 +184,6 @@ export default {
             title: "Dirt Movers Plus",
             link: "https://www.dirtmoversplusllc.com/",
           },
-          // {
-          //   title: "C & R Printing",
-          //   link: "https://www.candrprinting.com/",
-          // },
           // {
           //   title: "Design Pro",
           //   link: "https://micro.designproremodeling.com/home-remodeling",
