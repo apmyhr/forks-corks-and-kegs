@@ -84,8 +84,14 @@ import RegisterSection from "./components/sections/RegisterSection.vue";
 import BottomSection from "./components/sections/BottomSection.vue";
 import FooterSection from "./components/sections/FooterSection.vue";
 
-const HANDBID_WEBSITE =
-  "https://events.handbid.com/auctions/forks-corks-and-kegs-2025";
+export const HANDBID_WEBSITE =
+  "https://events.handbid.com/auctions/forks-corks-kegs-2026";
+
+export const EVENT_DATE = "May 16th, 2026";
+export const EVENT_TIME = "6:00 PM";
+export const EARLY_BIRD_PRICE_DATE = "February 7th, 2026";
+export const EARLY_BIRD_PRICE = 75;
+export const REGULAR_PRICE = 85;
 
 export default {
   name: "App",
@@ -126,10 +132,10 @@ export default {
         title: "Home",
         text: "Home",
         paragraphs: [
-          "St. Andrew the Apostle School PTO will be hosting the seventh annual Forks,Corks, & Kegs on Saturday, May 10, 2025",
+          `St. Andrew the Apostle School PTO will be hosting the seventh annual Forks,Corks, & Kegs on Saturday, ${EVENT_DATE}`,
           "This exciting tasting festival in Clifton, Virginia will include local breweries, wineries, and food trucks, a live band, as well as a silent auction and raffles. Your ticket includes all-you-can-eat and drink, plus a tasting glass.",
           "Past silent auctions have included local beach house vacations, tropical resort vacations, prime seats to a Washington Capitals game, Washington Nationals Diamond Club tickets, Virginia winery tours and more!",
-          "All proceeds from Forks, Corks, & Kegs go to the St Andrew’s School PTO to help support our talented students. Past PTO funds have been used to purchase a new preschool playground, Robotics Club, ActiveBoards, Science Lab curriculum, textbooks, a new school website, field trips, school assemblies, and an iPad library for classroom use.",
+          "All proceeds from Forks, Corks, & Kegs go to the St Andrew’s School PTO to help support our talented students. This year, proceeds from this event will be dedicated to strengthening security measures at our school. These funds will allow us to implement vital safety upgrades, ensuring that our campus remains a secure haven for our children, faculty, and staff.",
         ],
       },
       {
@@ -137,7 +143,7 @@ export default {
         title: "Tickets",
         text: "Tickets",
         paragraphs: [
-          `Tickets can be purchased on the <a href='${HANDBID_WEBSITE}'>Handbid website</a> for $75. Each ticket includes all you can eat food at the food trucks, all you can drink beer and wine, and a tasting glass.`,
+          `Tickets can be purchased on the <a href='${HANDBID_WEBSITE}'>Handbid website</a> for $${EARLY_BIRD_PRICE} if purchased before ${EARLY_BIRD_PRICE_DATE}, and $${REGULAR_PRICE} thereafter. Each ticket includes all you can eat food at the food trucks, all you can drink beer and wine, and a tasting glass.`,
         ],
       },
       {
@@ -233,7 +239,7 @@ export default {
         title: "Auction",
         text: "Auction",
         paragraphs: [
-          `The Forks, Corks & Kegs silent auction has included tropical vacation packages, Bethany Beach house vacations, Diamond Club Nationals tickets (sponsored by FH Furr), Capitals tickets, Virginia winery tasting tours, restaurant gift cards, summer camps, sports lessons, museum tickets, children’s birthday party packages, skiing, golf, theater tickets, and every sort of local activity from laser tag to zip lining that will make your family very happy.  Bidding will open at 6:00 am May 10th on our <a href='${HANDBID_WEBSITE}'>Handbid online auction</a> and close at 11:00 pm the night of May 18th.  All purchased items can be picked up at the event, or the following Monday in the school office.`,
+          `The Forks, Corks & Kegs silent auction has included tropical vacation packages, Bethany Beach house vacations, Diamond Club Nationals tickets (sponsored by FH Furr), Capitals tickets, Virginia winery tasting tours, restaurant gift cards, summer camps, sports lessons, museum tickets, children’s birthday party packages, skiing, golf, theater tickets, and every sort of local activity from laser tag to zip lining that will make your family very happy.  Bidding will open at 6:00 am May 16th on our <a href='${HANDBID_WEBSITE}'>Handbid online auction</a> and close at 10:00 pm the night of May 16th.  All purchased items can be picked up at the event, or the following Monday in the school office.`,
           "The silent auction is the primary means by which Forks, Corks & Kegs raises funds and previous donors have included American Shakespeare Center, Aqua-Tots, Burn Boot Camp, Bunnyman Brewing, Caboose Brewing, Casanel Vineyards, Chantilly Gymnastics, Chateau O'Brien, Children's Science Center, Creative Cauldron, Dave & Busters, DC Nationals, DC Capitols, Dulles Golf, Elite Island Resorts, Fairfax Collegiate, First Watch, Flynn O'Hara, Four Seasons Georgetown, Funland, Gadino Cellars, George Mason Athletics, Glory Days, Great American Restaurants, Great Country Farms, GoApe, Heroic Axe, Hillwood Estate, Hogback Mountain Paintball, Hylton Performing Arts Center, International Spy Museum, Jammin Java, KID Museum, Lazy Dog Cafe, Lewis Ginter Botanic Gardens, Luray Caverns, Manassas Ballet, Merrifield Garden Center, Meadows Farms Garden Center, Mission BBQ, Monster Golf, Montpelier, Monticello, Mount Vernon, My Gym, Naked Mountain, Narmada Winery, nZone, Old Farm Winery, Old Bust Head Brewery, Outer Limits Game Lounge, Panera, Paradise Springs, Paschal Lamb, Pev's Paintball, PSA, Potomac River Riders, Potomac River Running, Tennis DNA, Rappahanock Cellars, Rosemary's Thyme, SciGenius Camps, Seven Oaks Lavender Farm, Shadowland, Shenandoah River Outfitters, Showplace ICON Theater, Sight & Sound Theater, Studio Theater, Signature Theater, Skate n Fun Zone, Starbucks, Tarara Winery, Texas de Brazil, Tucked Away Brewing, Capitol Grille, Mariner's Museum, Total Wine & More, Twin Lakes Golf Course, Westfield Golf Course, Westfields Marriott, Ultimate Archery, University Theater, Valvoline, Vertical Rock, Villagio, Virginia International Raceway, Walkerville Southern Railroad, Watermark Cruises, Winery at La Grange, Wolf Trap Performing Arts, and Zavazone.",
         ],
       },

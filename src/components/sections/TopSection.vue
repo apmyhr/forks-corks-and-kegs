@@ -33,6 +33,8 @@
 <script>
 const PDF_NAME = "2025-Forksflyer.pdf";
 
+import { EVENT_DATE, EVENT_TIME } from "@/App.vue";
+
 export default {
   name: "TopSection",
   props: {
@@ -40,7 +42,7 @@ export default {
   },
   data: () => ({
     title: "Forks, Corks, & Kegs",
-    date: "Saturday, May 10th 2025 at 6:00 PM",
+    date: `Saturday, ${EVENT_DATE} at ${EVENT_TIME}`,
   }),
   methods: {
     openUrl(URL) {
